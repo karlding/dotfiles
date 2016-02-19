@@ -1,0 +1,15 @@
+# Create a new directory and enter it after
+# usage: md directory
+function md() {
+    mkdir -p "$@" && cd "$@"
+}
+
+# get gzipped size
+# usage: gz filename
+function gz() {
+    echo "orig size    (bytes): "
+    cat "$1" | wc -c
+    echo "gzipped size (bytes): "
+    gzip -c "$1" | wc -c
+}
+
