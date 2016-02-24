@@ -1,0 +1,3 @@
+# vim as default
+export EDITOR="vim"
+
