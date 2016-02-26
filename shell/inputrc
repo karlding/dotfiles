@@ -1,0 +1,48 @@
+# Autocomplete options
+# Make <tab> autocomplete regardless of case
+set completion-ignore-case on
+
+# Make <tab> autocomplete insensitive for hyphens and underscores
+set completion-map-case on
+
+# make suggestions use DIR_COLORS
+set colored-stats on
+
+# List all matches in case multiple possible completions are possible
+set show-all-if-ambiguous on
+
+# Immediately add a trailing slash when autocompleting symlinks for directories
+set mark-symlinked-directories on
+
+
+
+# Use the text that has already been typed as the prefix for searching through
+# commands (basically more intelligent up/down behaviour)
+# better history search
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# ctrl left, ctrl right for moving on the readline by word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# Do not autocomplete hidden files unless pattern begins with a dot
+set match-hidden-files off
+
+# Show all autocomplete results at once
+set page-completions off
+
+# If there are more than 100 possible completions, ask before showing
+set completion-query-items 100
+
+# Show extra file info when completing (like ls -F)
+set visible-stats on
+
+# More intelligent autocomplete, by using cursor position context to infer
+#   (ie. text before AND after cursor)
+set skip-completed-text on
+
+# Allow UTF-8 input and output
+set input-meta on
+set output-meta on
+set convert-meta off
