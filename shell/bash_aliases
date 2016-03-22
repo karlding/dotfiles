@@ -1,0 +1,29 @@
+# ----------------------------------------------------------------------
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cd..="cd .."
+alias ~="cd ~"
+
+# ----------------------------------------------------------------------
+
+alias :q='exit'
+alias ll='ls -lha'
+alias mv='mv -v'
+alias rm='rm -v'
+alias cp='cp -v'
+alias less='less -r'
+alias map='xargs -n1'
+
+# ----------------------------------------------------------------------
+
+## Colorize grep commands
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# ----------------------------------------------------------------------
+
+# Recursively delete `.DS_Store` files
+alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
