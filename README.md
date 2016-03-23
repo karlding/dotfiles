@@ -2,7 +2,7 @@
 [Karl](https://justkding.me) attempts to do dotfiles. These are my dotfiles I am using for my laptop's current setup.
 
 ## Setup
-Clone the repository somewhere. It doesn't really matter where, since we will be symlinking the dotfiles anyways.
+Clone the repository somewhere. It doesn't really matter where, since we will be symlinking the dotfiles anyways. ``.local`` versions of the files will be sourced after.
 
 ```bash
 git clone https://github.com/karlding/dotfiles.git
