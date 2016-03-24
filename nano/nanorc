@@ -1,0 +1,26 @@
+set autoindent
+set nohelp
+set tabsize 4
+set nowrap
+set softwrap
+set const
+set mouse
+set nonewlines
+set morespace
+set multibuffer
+set smarthome
+
+bind F1 help all
+bind ^W exit all
+bind ^F whereis all
+bind F3 searchagain all
+bind F5 refresh all
+bind ^B findbracket all
+bind ^R replace all
+bind ^Space nextbuf all
+bind ^Space nextbuf all
+bind ^N insert all
+bind ^C copytext all
+bind ^X cut all
+bind ^V uncut all
+bind ^O tofiles all
