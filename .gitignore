@@ -24,3 +24,11 @@ vim/.vim/undo
 # ignore dotfiles setup stuff
 setup/*.log
 
+# Sublime Text 3
+# Package Control: https://packagecontrol.io/docs/syncing
+subl/User/Package\ Control.last-run
+subl/User/Package\ Control.ca-list
+subl/User/Package\ Control.ca-bundle
+subl/User/Package\ Control.system-ca-bundle
+subl/User/Package\ Control.cache/
+subl/User/Package\ Control.ca-certs/
