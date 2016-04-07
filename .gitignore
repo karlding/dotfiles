@@ -32,3 +32,5 @@ subl/User/Package\ Control.ca-bundle
 subl/User/Package\ Control.system-ca-bundle
 subl/User/Package\ Control.cache/
 subl/User/Package\ Control.ca-certs/
+subl/User/Package\ Control.merged-ca-bundle
+subl/User/Package\ Control.user-ca-bundle

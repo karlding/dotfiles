@@ -22,7 +22,7 @@ mklink /H "%APPDATA%\ConEmu.xml" "%DOTFILES_DIR%\os\windows\ConEmu\ConEmu.xml"
 Symlink the entire ``User`` folder to the Sublime Text app directory. On Windows, this is located at ``%appdata%\Sublime Text 3\Packages\User``.
 
 ```bash
-mklink /J "C:\Users\Karl\AppData\Roaming\Sublime Text 3\Packages\User" "C:\dotfiles\location\subl\User"
+mklink /J "%appdata%\Sublime Text 3\Packages\User" "C:\dotfiles\location\subl\User"
 ```
 
 Notice that we're using the ``/J`` flag to hard link a directory, instead of the ``/H`` flag to hard link a file
