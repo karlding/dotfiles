@@ -1,0 +1,9 @@
+# turn display of headers on
+.headers on
+
+# set output mode to left-aligned columns
+.mode column
+
+# use '[null]' instead of NULL values
+.nullvalue "[NULL]"
+
