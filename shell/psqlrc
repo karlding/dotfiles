@@ -1,0 +1,17 @@
+# Turn off output for any meta commands executed here
+\set QUIET 1
+
+# rollback transaction errors
+\set ON_ERROR_ROLLBACK interactive
+
+# make null values more visible, and prevent confusion
+\pset null '[NULL]'
+
+# display row counts for SELECT and UPDATE operations
+\pset footer on
+
+# use Unicode box-drawing characters to create tables
+\pset linestyle unicode
+
+# restore output for meta-commands
+\unset QUIET
