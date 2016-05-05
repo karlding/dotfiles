@@ -15,8 +15,9 @@ Thumbs.db
 
 # working files
 vim/.vim/viminfo
-vim/.vim/swaps/*
+vim/.vim/swaps
 vim/.vim/undo
+vim/.vim/backups
 
 # git credential file
 .gitconfig.local

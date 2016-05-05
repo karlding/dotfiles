@@ -18,6 +18,13 @@ Symlink the ``conemu.xml`` file to ``%APPDATA%\ConEmu.xml``.
 mklink /H "%APPDATA%\ConEmu.xml" "%DOTFILES_DIR%\os\windows\ConEmu\ConEmu.xml"
 ```
 
+#### Cygwin Environments
+I ran into a weird issue with Cygwin where it couldn't read my ``gitconfig`` symlink for some reason. So I just ended up creating a hard link instead, which worked fine.
+
+```bash
+mklink /H .gitconfig "%DOTFILES_DIR%\git\gitconfig"
+```
+
 #### Sublime Text 3
 Symlink the entire ``User`` folder to the Sublime Text app directory. On Windows, this is located at ``%appdata%\Sublime Text 3\Packages\User``.
 

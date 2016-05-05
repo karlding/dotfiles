@@ -3,6 +3,32 @@
 # Create a new directory and enter it after
 # usage: md directory
 function md() {
+    if [ -n "$*" ]; then
+        mkdir -p "$@"
+        #      └─ make parent directories if needed
+        cd "$@" \
+           || exit 1
+    fi
+}
+
+# ----------------------------------------------------------------------
+
+# Get gzip information (gzipped file size + reduction size)
+# usage: gz filename
+function gz() {
+    echo "orig size    (bytes): "
+    cat "$1" | wc -c
+    echo "gzipped size (bytes): "
+    gzip -c "$1" | wc -c
+}
+
+# ----------------------------------------------------------------------
+
+# ----------------------------------------------------------------------
+
+# Create a new directory and enter it after
+# usage: md directory
+function md() {
     mkdir -p "$@" && cd "$@"
 }
 
@@ -15,5 +41,26 @@ function gz() {
     cat "$1" | wc -c
     echo "gzipped size (bytes): "
     gzip -c "$1" | wc -c
+}
+
+# ----------------------------------------------------------------------
+
+# Create data URI from a file
+# usage: datauri filename
+function datauri() {
+    local mimeType=""
+    if [ -f "$1" ]; then
+        mimeType=$(file -b --mime-type "$1")
+        #                └─ do not prepend the filename to the output
+        if [[ $mimeType == text/* ]]; then
+            mimeType="$mimeType;charset=utf-8"
+        fi
+
+        printf "data:%s;base64,%s" \
+                    "$mimeType" \
+                    "$(openssl base64 -in "$1" | tr -d "\n")"
+    else
+        printf "%s is not a file.\n" "$1"
+    fi
 }
 
