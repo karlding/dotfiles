@@ -19,7 +19,7 @@ mklink /H "%APPDATA%\ConEmu.xml" "%DOTFILES_DIR%\os\windows\ConEmu\ConEmu.xml"
 ```
 
 #### Cygwin Environments
-I ran into a weird issue with Cygwin where it couldn't read my ``gitconfig`` symlink for some reason. So I just ended up creating a hard link instead, which worked fine.
+I ran into a weird issue with Cygwin where it couldn't read my ``gitconfig`` symlink for some reason, but happily reads the other (Linux-style) symlinks. So I just ended up creating a hard link instead, which worked fine. It probably is a good idea to use hard links instead of ``ln -s`` on Windows.
 
 ```bash
 mklink /H .gitconfig "%DOTFILES_DIR%\git\gitconfig"

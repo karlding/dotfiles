@@ -30,3 +30,14 @@ alias ls='ls --color=auto'
 
 # Recursively delete `.DS_Store` files
 alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+# ----------------------------------------------------------------------
+
+# Enable aliases to be sudo-ed
+alias sudo='sudo '
+
+# Get week number
+alias week='date +%V'
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
