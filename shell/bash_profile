@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+source_bash_files() {
+
+    local file=""
+    local i=""
+
+    declare -r -a FILES_TO_SOURCE=(
+        "aliases"
+		"aliases.local"
+        "autocomplete"
+        "exports"
+		"exports.local"
+        "functions"
+		"functions.local"
+        "bash_options"
+        "prompt"
+        "bash.local"  # for local settings that should
+                      # not be under version control
+    )
+
+    for i in ${!FILES_TO_SOURCE[*]}; do
+
+        file="$HOME/.${FILES_TO_SOURCE[$i]}"
+
+        [ -r "$file" ] && source "$file"
+
+    done
+	
+	if [ -r "$HOME/.dircolors" ]; then
+		eval `dircolors $HOME/.dircolors`
+	fi
+
+
+}
+
+source_bash_files

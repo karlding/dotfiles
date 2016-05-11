@@ -35,3 +35,8 @@ subl/User/Package\ Control.cache/
 subl/User/Package\ Control.ca-certs/
 subl/User/Package\ Control.merged-ca-bundle
 subl/User/Package\ Control.user-ca-bundle
+
+# Atom
+# http://jbranchaud.github.io/splitting-atoms/adding-atom-to-dotfiles.html
+atom/packages
+atom/storage

@@ -1,0 +1,15 @@
+"*":
+  core:
+    disabledPackages: [
+      "vim-mode"
+    ]
+  editor:
+    showInvisibles: true
+    softWrap: true
+  "exception-reporting":
+    userId: "975141e8-eb51-54ef-196f-5f103fdf85f9"
+  minimap:
+    absoluteMode: true
+    adjustAbsoluteModeHeight: true
+  welcome:
+    showOnStartup: false

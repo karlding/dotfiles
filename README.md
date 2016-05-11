@@ -34,5 +34,12 @@ mklink /J "%appdata%\Sublime Text 3\Packages\User" "C:\dotfiles\location\subl\Us
 
 Notice that we're using the ``/J`` flag to hard link a directory, instead of the ``/H`` flag to hard link a file
 
+#### Atom
+Symlink the ``atom`` directory to ``~/.atom`` (or create a hard junction ``%userprofile%\.atom`` on Windows).
+
+```bash
+mklink /J "%appdata%\.atom" "C:\dotfiles\location\atom"
+```
+
 #### Vim
 vim plugins are managed using Vundle.
