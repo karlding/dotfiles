@@ -43,3 +43,21 @@ mklink /J "%appdata%\.atom" "C:\dotfiles\location\atom"
 
 #### Vim
 vim plugins are managed using Vundle.
+
+To setup on Windows (using Cygwin64), make sure you clone Vundle with Unix line endings. For some reason, Cygwin insists on checking out repositories with CRLF endings, which is a huge pain. We can get around this with the following:
+
+```bash
+git config --global core.autocrlf false
+git config --global core.safecrlf true
+git config --global core.eol lf
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+If you get errors about the directory already existing, just ``cd`` into the correct directory and then clone there. Then hard link your ``.vim`` from ``dotfiles`` to your home directory (for me, ``/home`` is ``C:\cygwin64\home\myusername``) using a junction.
+
+```bash
+mklink /J C:\cygwin64\home\myusername\.vim C:\%DOTFILES_DIR%\vim\.vim
+```
+
+Voila! Now install all your plugins using ``:PluginInstall``.
