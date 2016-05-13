@@ -62,3 +62,5 @@ function datauri() {
     fi
 }
 
+
+[ -f ~/.functions.local ] && source ~/.functions.local

@@ -9,12 +9,9 @@ source_bash_files() {
 
     declare -r -a FILES_TO_SOURCE=(
         "aliases"
-		"aliases.local"
         "autocomplete"
         "exports"
-		"exports.local"
         "functions"
-		"functions.local"
         "bash_options"
         "prompt"
         "bash.local"  # for local settings that should
