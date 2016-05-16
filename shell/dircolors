@@ -117,7 +117,7 @@ EXEC                    00;32   # This is for files with execute permission:
 .rar    01;31  # rar
 .ace    01;31  # unace
 .zoo    01;31  # zoo
-.cpio   01;31 # cpio
+.cpio   01;31  # cpio
 .7z     01;31  # p7zip
 .rz     01;31  # rzip
 .apk    01;31  # rzip
@@ -153,25 +153,31 @@ EXEC                    00;32   # This is for files with execute permission:
 .ico    00;35
 
 ## Document files (green)
+### Adobe Acrobat
 .pdf    00;32
+.PDF    00;32
 .ps     00;32
 .txt    00;32
+.htm    00;32
 .html   00;32
 .css    00;32
 .rst    00;32
 .md     00;32
 .patch  00;32
 .diff   00;32
-.tex    00;32
-.xls    00;32
+.tex    00;32 # LaTeX
+
+### Microsoft Office
+.xls    00;32 # Excel
 .xlsx   00;32
-.doc    00;32
+.doc    00;32 # Word
 .docx   00;32
-.ppt    00;32
+.ppt    00;32 # Powerpoint
 .pptx   00;32
 .key    00;32 # Keynote presentation
 .ods    00;32 # OpenDocument spreadsheet
 .odt    00;32 # OpenDocument text document
+.odp    00;32 # OpenDocument presentation
 
 ## Template files (bright green)
 .pt     01;32 # Zope page template
@@ -181,52 +187,60 @@ EXEC                    00;32   # This is for files with execute permission:
 .ott    01;32 # OpenDocument text document template
 
 ## Audio formats (bright red)
+.3gp    01;36
 .aac    01;36
+.aax    01;36
+.aiff   01;36
+.ape    01;36
 .au     01;36
+.axa    01;36
 .flac   01;36
+.m4a    01;36
+.m4p    01;36
 .mid    01;36
 .midi   01;36
 .mka    01;36
 .mp3    01;36
 .mpc    01;36
+.oga    01;36
 .ogg    01;36
 .ra     01;36
-.wav    01;36
-.m4a    01;36
-.axa    01;36
-.oga    01;36
 .spx    01;36
+.wav    01;36
+.webm   01;36
 .xspf   01;36
 
 ## Video formats (as audio + bold)
-.mov    01;36
-.mpg    01;36
-.mpeg   01;36
-.m2v    01;36
-.mkv    01;36
-.ogm    01;36
-.mp4    01;36
-.m4v    01;36
-.mp4v   01;36
-.vob    01;36
-.qt     01;36
-.nuv    01;36
-.wmv    01;36
+.3gp    01;36
+.anx    01;36
 .asf    01;36
-.rm     01;36
-.rmvb   01;36
-.flc    01;36
+.axv    01;36
 .avi    01;36
+.divx   01;36
+.flc    01;36
 .fli    01;36
-.flv    01;36
+.flv    01;36 # Flash video
 .gl     01;36
 .m2ts   01;36
-.divx   01;36
-.webm   01;36
-.axv    01;36
-.anx    01;36
+.m2v    01;36
+.m4p    01;36
+.m4v    01;36
+.mkv    01;36
+.mov    01;36 # QuickTime File Format
+.mp4    01;36
+.mp4v   01;36
+.mpeg   01;36
+.mpg    01;36
+.nuv    01;36
+.ogm    01;36
 .ogv    01;36
 .ogx    01;36
+.qt     01;36
+.rm     01;36
+.rmvb   01;36
+.vob    01;36
+.webm   01;36
+.wmv    01;36 # Windows Media Video
 
 ## Config files (cyan)
 .conf       00;36
@@ -239,12 +253,16 @@ EXEC                    00;32   # This is for files with execute permission:
 .vcl        00;36 # Varnish
 
 ## Source code files (yellow)
-.c              00;33
-.cpp            00;33
-.py             00;33
+.c              00;33 # c
+.cpp            00;33 # c++
+.cs             00;33 # csharp
+.fs             00;33 # fsharp
+.fsx            00;33 # fsharp script
+.py             00;33 # python
 .coffesscript   00;33
 .js             00;33
 .rb             00;33
+.rkt            00;33 # Dr. Racket
 .sh             00;33
 .zsh            00;33
 .env            00;33
@@ -254,17 +272,19 @@ EXEC                    00;32   # This is for files with execute permission:
 .zcml           00;33 # Zope configuration language
 .pl             00;33
 .lua            00;33
-.clj            00;33
-.cs             00;33 # csharp
-.fs             00;33 # fsharp
-.fsx            00;33 # fsharp script
+.clj            00;33 # Clojure
 .go             00;33
 
 ## Data / database (green)
+.accdb  00;32
+.accde  00;32
+.accdr  00;32
+.mdb    00;32
+.sqlite 00;32 # sqlite
 .db     00;32
-.sql    00;32
 .json   00;32
 .plist  00;32 # OSX properties
+.sql    00;32
 .xml    00;32
 
 ## Files of special interest (base1 + bold)
@@ -287,19 +307,29 @@ EXEC                    00;32   # This is for files with execute permission:
 *readme.txt         01;37
 *README.markdown    01;37
 *README.md          01;37
+*LICENSE            01;37
+*COPYING            01;37
+*INSTALL            01;37
+*COPYRIGHT          01;37
+*AUTHORS            01;37
+*CONTRIBUTORS       01;37
+*PATENTS            01;37
+*VERSION            01;37
+*NOTICE             01;37
+*CHANGES            01;37
 .cc                 01;37
 
 ## Machine generated files / non-important (bright black)
-.log        01;30
-.bak        01;30
 .aux        01;30
+.bak        01;30
+.bbl        01;30
+.blg        01;30
 .lof        01;30
+.log        01;30
 .lol        01;30
 .lot        01;30
 .out        01;30
 .toc        01;30
-.bbl        01;30
-.blg        01;30
 *~          01;30
 *#          01;30
 .part       01;30
