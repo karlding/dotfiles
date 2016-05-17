@@ -41,4 +41,4 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # Make Python use UTF-8 encoding for output to stdin/stdout/stderr
 export PYTHONIOENCODING="UTF-8"
 
-[ -f ~/.exports.local ] && source ~/.exports.local
+[ -f ~/.bash_exports.local ] && source ~/.bash_exports.local

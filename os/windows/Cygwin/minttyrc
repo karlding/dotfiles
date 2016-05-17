@@ -1,7 +1,7 @@
 Term              = xterm-256color
 ZoomMouse         = yes
-RightClickAction  = paste
-CopyOnSelect      = yes
+RightClickAction  = menu
+CopyOnSelect      = no 
 Font              = Consolas
 FontHeight        = 12
 BoldAsFont        = yes

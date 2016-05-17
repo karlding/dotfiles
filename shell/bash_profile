@@ -8,12 +8,12 @@ source_bash_files() {
     local i=""
 
     declare -r -a FILES_TO_SOURCE=(
-        "aliases"
+        "bash_aliases"
         "autocomplete"
-        "exports"
-        "functions"
+        "bash_exports"
+        "bash_functions"
         "bash_options"
-        "prompt"
+        "bash_prompt"
         "bash.local"  # for local settings that should
                       # not be under version control
     )

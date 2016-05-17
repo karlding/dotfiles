@@ -1,9 +1,17 @@
 "*":
   core:
+    audioBeep: false
+    autoHideMenuBar: true
     disabledPackages: [
       "vim-mode"
+      "activate-power-mode"
+    ]
+    themes: [
+      "base-16-ocean-dark-ui-theme"
+      "base16-ocean-dark-syntax-theme"
     ]
   editor:
+    scrollPastEnd: true
     showInvisibles: true
     softWrap: true
   "exception-reporting":

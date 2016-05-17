@@ -63,4 +63,4 @@ function datauri() {
 }
 
 
-[ -f ~/.functions.local ] && source ~/.functions.local
+[ -f ~/.bash_functions.local ] && source ~/.bash_functions.local

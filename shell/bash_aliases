@@ -44,4 +44,5 @@ alias reload="exec $SHELL -l"
 
 # ----------------------------------------------------------------------
 
-[ -f ~/.aliases.local ] && source ~/.aliases.local
+# Source local aliases
+[ -f ~/.bash_aliases.local ] && source ~/.bash_aliases.local

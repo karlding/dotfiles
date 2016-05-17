@@ -9,7 +9,7 @@ git clone https://github.com/karlding/dotfiles.git
 ```
 
 ### Symlinking
-Then, symlink all the things (or copy them manually)! On Windows, you can run ``setup/symlinks.bat`` which will symlink everything for you.
+Then, symlink all the things (or copy them manually)! On Windows, you can run ``setup/symlinks.bat`` which will symlink everything for you (using hardlinks). One of the downsides of this is that when making changes, ``git`` will not track them if you edit the hardlinked file&mdash;you must make your changes in the ``dotfiles/`` directory, which will update the hardlinked file (ie. don't do ``vim ~/.bash_profile``, and do ``vim ~/dotfiles/shell/.bash_profile`` instead).
 
 #### ConEmu
 Symlink the ``conemu.xml`` file to ``%APPDATA%\ConEmu.xml``.
@@ -61,3 +61,5 @@ mklink /J C:\cygwin64\home\myusername\.vim C:\%DOTFILES_DIR%\vim\.vim
 ```
 
 Voila! Now install all your plugins using ``:PluginInstall``.
+
+**Note**: If you are using Cygwin, make sure you install the *Cygwin version of git* as well, or else plugin installation using Vundle will fail.
