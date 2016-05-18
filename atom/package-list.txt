@@ -1,0 +1,9 @@
+base-16-ocean-dark-ui-theme@1.6.0
+base16-ocean-dark-syntax-theme@0.1.9
+git-time-machine@1.5.2
+highlight-selected@0.11.2
+markdown-scroll-sync@2.1.2
+minimap@4.23.5
+minimap-highlight-selected@4.4.0
+
+

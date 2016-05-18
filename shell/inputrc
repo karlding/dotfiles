@@ -46,3 +46,5 @@ set skip-completed-text on
 set input-meta on
 set output-meta on
 set convert-meta off
+
+[ -f ~/.inputrc.local ] && source ~/.inputrc.local

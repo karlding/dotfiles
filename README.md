@@ -41,6 +41,20 @@ Symlink the ``atom`` directory to ``~/.atom`` (or create a hard junction ``%user
 mklink /J "%appdata%\.atom" "C:\dotfiles\location\atom"
 ```
 
+You can automatically install all the packages using ``apm``.
+
+```bash
+cd ~/.atom
+apm list --installed --bare > package-list.txt
+```
+
+If you make any updates, update the ``package-list.txt`` file.
+
+```bash
+cd ~/.atom
+apm install --packages-file package-list.txt
+```
+
 #### Vim
 vim plugins are managed using Vundle.
 
