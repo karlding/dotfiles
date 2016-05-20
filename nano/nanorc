@@ -1,14 +1,48 @@
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# nano options
+
+# enable auto-indentation
 set autoindent
+
+# hide the help lists at the bottom of the screen
 set nohelp
+
+# tab size of 4 columns
 set tabsize 4
+
+# disable text wrapping
 set nowrap
+
+# enable soft line wrapping (2.1+)
 set softwrap
+
+# display the cursor position in the status bar
 set const
+
+# enable mouse support
+# mouse clicks can be used to place the cursor
+# set the mark (with a double click)
+# and execute shortcuts
 set mouse
+
+# don't add newlines to the ends of files
 set nonewlines
+
+# 
 set morespace
+
+# allow inserting files into their own buffers
 set multibuffer
+
+# make `Home` key smarter
 set smarthome
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+# Key bindings
 
 bind F1 help all
 bind ^W exit all
@@ -24,3 +58,9 @@ bind ^C copytext all
 bind ^X cut all
 bind ^V uncut all
 bind ^O tofiles all
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+# Additional Language Syntax files
