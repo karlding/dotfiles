@@ -25,11 +25,14 @@ source_bash_files() {
         [ -r "$file" ] && source "$file"
 
     done
-	
-	if [ -r "$HOME/.dircolors" ]; then
-		eval `dircolors $HOME/.dircolors`
-	fi
 
+    if [ -r "$HOME/.dircolors" ]; then
+        eval `dircolors $HOME/.dircolors`
+  	fi
+
+    if [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 
 }
 
