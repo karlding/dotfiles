@@ -29,7 +29,7 @@ set mouse
 # don't add newlines to the ends of files
 set nonewlines
 
-# 
+#
 set morespace
 
 # allow inserting files into their own buffers
@@ -64,3 +64,155 @@ bind ^O tofiles all
 
 
 # Additional Language Syntax files
+
+## Apache
+include "~/.nano/apacheconf.nanorc"
+
+## asm
+include "~/.nano/asm.nanorc"
+
+## awk
+include "~/.nano/awk.nanorc"
+
+## .conf configuration files
+include "~/.nano/conf.nanorc"
+
+## Conky
+include "~/.nano/conky.nanorc"
+
+## C/C++
+include "~/.nano/c.nanorc"
+
+## C#
+include "~/.nano/csharp.nanorc"
+
+## CSS
+include "~/.nano/css.nanorc"
+
+## git
+include "~/.nano/git.nanorc"
+include "~/.nano/gitcommit.nanorc"
+
+## golang
+include "~/.nano/go.nanorc"
+
+## CSS
+include "~/.nano/css.nanorc"
+
+## Cython
+include "~/.nano/cython.nanorc"
+
+## HAML
+include "~/.nano/haml.nanorc"
+
+## Haskell
+include "~/.nano/haskell.nanorc"
+
+## HTML
+include "~/.nano/html.nanorc"
+
+## ini configuration files
+include "~/.nano/ini.nanorc"
+
+## inputrc
+include "~/.nano/inputrc.nanorc"
+
+## Java
+include "~/.nano/java.nanorc"
+
+## JavaScript
+include "~/.nano/javascript.nanorc"
+include "~/.nano/js.nanorc"
+
+## JSON
+include "~/.nano/json.nanorc"
+
+## Lisp
+include "~/.nano/lisp.nanorc"
+
+## Lua
+include "~/.nano/lua.nanorc"
+
+## Makefile
+include "~/.nano/makefile.nanorc"
+
+## man pages
+include "~/.nano/man.nanorc"
+
+## Markdown
+include "~/.nano/markdown.nanorc"
+
+## mpd
+include "~/.nano/css.nanorc"
+
+## nanorc
+include "~/.nano/nanorc.nanorc"
+
+## nginx
+include "~/.nano/nginx.nanorc"
+
+## OCaml
+include "~/.nano/ocaml.nanorc"
+
+## Patch files
+include "~/.nano/patch.nanorc"
+
+## Perl
+include "~/.nano/perl.nanorc"
+include "~/.nano/perl6.nanorc"
+
+## PHP
+include "~/.nano/php.nanorc"
+
+## packages
+include "~/.nano/pkg-config.nanorc"
+include "~/.nano/pkgbuild.nanorc"
+
+## Puppet
+include "~/.nano/puppet.nanorc"
+
+## Python
+include "~/.nano/python.nanorc"
+
+## Ruby
+include "~/.nano/ruby.nanorc"
+
+## Rust
+include "~/.nano/rust.nanorc"
+
+## Scala
+include "~/.nano/scala.nanorc"
+
+## sed
+include "~/.nano/sed.nanorc"
+
+## shell scripts
+include "~/.nano/sh.nanorc"
+
+## SQL
+include "~/.nano/sql.nanorc"
+
+## Swift
+include "~/.nano/swift.nanorc"
+
+## tcl
+include "~/.nano/tcl.nanorc"
+
+## LaTeX
+include "~/.nano/tex.nanorc"
+
+## vim
+include "~/.nano/vi.nanorc"
+
+## XML
+include "~/.nano/xml.nanorc"
+
+## YAML
+include "~/.nano/yaml.nanorc"
+
+## yum
+include "~/.nano/yum.nanorc"
+
+## zsh
+include "~/.nano/zsh.nanorc"
+include "~/.nano/zshrc.nanorc"
