@@ -1,7 +1,6 @@
 Term              = xterm-256color
 ZoomMouse         = yes
 RightClickAction  = menu
-CopyOnSelect      = no 
 Font              = Consolas
 FontHeight        = 12
 BoldAsFont        = yes
@@ -25,3 +24,4 @@ Cyan              = 150, 181, 180
 BoldCyan          = 150, 181, 180
 White             = 192, 197, 206
 BoldWhite         = 239, 241, 245
+CopyOnSelect      = no
