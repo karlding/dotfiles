@@ -19,6 +19,9 @@ vim/.vim/swaps
 vim/.vim/undo
 vim/.vim/backups
 
+# Vundle
+vim/.vim/bundle
+
 # git credential file
 .gitconfig.local
 
