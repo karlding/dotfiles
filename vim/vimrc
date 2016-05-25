@@ -57,8 +57,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 " vim-markdown
 " https://github.com/plasticboy/vim-markdown
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+
+
+" tabular
+" https://github.com/godlygeek/tabular
+Plugin 'godlygeek/tabular'
 
 
 " rails-vim
@@ -79,6 +83,11 @@ Plugin 'scrooloose/syntastic'
 " The NERD Tree
 " https://github.com/scrooloose/nerdtree
 Plugin 'scrooloose/nerdtree'
+
+
+" Vim gutter
+" https://github.com/airblade/vim-gitgutter
+Plugin 'airblade/vim-gitgutter'
 
 
 " All of your Plugins must be added before the following line
@@ -550,3 +559,6 @@ endfunction
 au FileType coffee call CoffeeScriptFold()
 
 au FileType gitcommit call setpos('.', [0, 1, 1, 0])
+
+set nofoldenable    " disable folding
+
