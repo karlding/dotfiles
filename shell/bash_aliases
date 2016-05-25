@@ -9,7 +9,7 @@ alias ~="cd ~"
 # ----------------------------------------------------------------------
 
 alias :q='exit'
-alias ll='ls -lha'
+alias ll='ls -lGha'
 alias mv='mv -v'
 alias rm='rm -v'
 alias cp='cp -v'
