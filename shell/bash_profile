@@ -9,7 +9,7 @@ source_bash_files() {
 
     declare -r -a FILES_TO_SOURCE=(
         "bash_aliases"
-        "autocomplete"
+        "bash_autocomplete"
         "bash_exports"
         "bash_functions"
         "bash_options"
