@@ -45,14 +45,14 @@ You can automatically install all the packages using ``apm``.
 
 ```bash
 cd ~/.atom
-apm list --installed --bare > package-list.txt
+apm install --packages-file package-list.txt
 ```
 
 If you make any updates, update the ``package-list.txt`` file.
 
 ```bash
 cd ~/.atom
-apm install --packages-file package-list.txt
+apm list --installed --bare > package-list.txt
 ```
 
 #### Vim

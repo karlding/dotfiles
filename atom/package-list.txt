@@ -2,7 +2,7 @@ base-16-ocean-dark-ui-theme@1.7.0
 base16-ocean-dark-syntax-theme@0.1.9
 git-time-machine@1.5.2
 highlight-selected@0.11.2
-minimap@4.24.1
+minimap@4.24.3
 minimap-highlight-selected@4.4.0
 
 
