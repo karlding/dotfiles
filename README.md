@@ -77,3 +77,13 @@ mklink /J C:\cygwin64\home\myusername\.vim C:\%DOTFILES_DIR%\vim\.vim
 Voila! Now install all your plugins using ``:PluginInstall``.
 
 **Note**: If you are using Cygwin, make sure you install the *Cygwin version of git* as well, or else plugin installation using Vundle will fail.
+
+#### git
+You may want to set up a ``~/.gitconfig.local`` to prevent git from complaining whenever you try to commit. Add the following to your ``~/.gitconfig.local``, where ``Karl`` and ``karlding@users.noreply.github.com`` are your name and email.
+
+```
+[user]
+    useConfigOnly = true
+    name = Karl
+    email = karlding@users.noreply.github.com
+```

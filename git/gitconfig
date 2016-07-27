@@ -10,6 +10,21 @@
     # List contributors with number of commits and email addresses
     contributors = shortlog --summary --numbered --email
 
+    # Add all files to staging area
+    aa = add --all
+
+    # Add files using patch
+    ap = add --patch
+
+    # Commit using verbose output
+    ci = commit -v
+
+    # Checkout
+    co = checkout
+
+    # Status
+    st = status
+
 [apply]
     # Detect whitespace errors when applying a patch
     whitespace = fix
