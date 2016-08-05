@@ -58,6 +58,8 @@ bind ^C copytext all
 bind ^X cut all
 bind ^V uncut all
 bind ^O tofiles all
+# CTRL + w
+bind ^] cancel all
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
