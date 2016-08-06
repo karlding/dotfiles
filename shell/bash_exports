@@ -20,7 +20,8 @@ export HISTIGNORE='&:[bf]g:c:clear:history:exit:q:pwd:* --help'
 
 # Increase the maximum number of commands recorded in the
 # command history (default value is 500)
-export HISTSIZE=10000
+# http://superuser.com/questions/479726/how-to-get-infinite-command-history-in-bash
+export HISTSIZE="INFINITE"
 
 # Prefer US English and use UTF-8 encoding
 export LANG="en_US"
