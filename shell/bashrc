@@ -1,1 +1,35 @@
-[ -n "$PS1" ] && source ~/.bash_profile 
+#!/bin/bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+source_bash_files() {
+
+    local file=""
+    local i=""
+
+    declare -r -a FILES_TO_SOURCE=(
+        "bash_aliases"
+        "bash_autocomplete"
+        "bash_exports"
+        "bash_functions"
+        "bash_options"
+        "bash_prompt"
+        "bash.local"  # for local settings that should
+                      # not be under version control
+    )
+
+    for i in ${!FILES_TO_SOURCE[*]}; do
+
+        file="$HOME/.${FILES_TO_SOURCE[$i]}"
+
+        [ -r "$file" ] && source "$file"
+
+    done
+
+    if [ -r "$HOME/.dircolors" ]; then
+        eval `dircolors $HOME/.dircolors`
+  	fi
+
+}
+
+source_bash_files
