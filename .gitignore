@@ -43,3 +43,12 @@ subl/User/Package\ Control.user-ca-bundle
 # http://jbranchaud.github.io/splitting-atoms/adding-atom-to-dotfiles.html
 atom/packages
 atom/storage
+
+# Weechat
+weechat/.weechat/certs
+weechat/.weechat/logs
+weechat/.weechat/script
+weechat/.weechat/sec.conf
+weechat/.weechat/weechat.log
+weechat/.weechat/urls.log
+
