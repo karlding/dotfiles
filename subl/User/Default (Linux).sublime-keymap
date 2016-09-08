@@ -1,0 +1,22 @@
+[
+    { // reindent
+         "keys": ["alt+shift+i"],
+         "command": "reindent",
+         "args": {
+             "single_line": false
+         }
+     },
+     { // open folder
+         "keys": ["ctrl+shift+o"],
+         "command": "prompt_open_folder"
+     },
+     { // reload file
+         "keys": ["f5"],
+         "command": "revert"
+     },
+     {
+         "keys": ["alt+d"],
+         "command": "goto_definition"
+     }
+
+]
