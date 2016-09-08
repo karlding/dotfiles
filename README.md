@@ -34,6 +34,8 @@ mklink /J "%appdata%\Sublime Text 3\Packages\User" "C:\dotfiles\location\subl\Us
 
 Notice that we're using the ``/J`` flag to hard link a directory, instead of the ``/H`` flag to hard link a file
 
+On Linux, the Sublime Text 3 configuration is located under ``~/.config/sublime-text-3/Packages/User``.
+
 #### Atom
 Symlink the ``atom`` directory to ``~/.atom`` (or create a hard junction ``%userprofile%\.atom`` on Windows).
 
