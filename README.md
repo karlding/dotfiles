@@ -8,6 +8,12 @@ Clone the repository somewhere. It doesn't really matter where, since we will be
 git clone https://github.com/karlding/dotfiles.git
 ```
 
+You may also want to install bash-completion (which is a dependency that is used for the ``PS1`` prompt.
+
+```bash
+sudo apt-get install bash-completion
+```
+
 ### Symlinking
 Then, symlink all the things (or copy them manually)! On Windows, you can run ``setup/symlinks.bat`` which will symlink everything for you (using hardlinks). One of the downsides of this is that when making changes, ``git`` will not track them if you edit the hardlinked file&mdash;you must make your changes in the ``dotfiles/`` directory, which will update the hardlinked file (ie. don't do ``vim ~/.bash_profile``, and do ``vim ~/dotfiles/shell/.bash_profile`` instead).
 
@@ -88,4 +94,9 @@ You may want to set up a ``~/.gitconfig.local`` to prevent git from complaining 
     useConfigOnly = true
     name = Karl
     email = karlding@users.noreply.github.com
+
+[push]
+    # Prevent disasters when doing things like `git push -f`
+    # Requires git version >= 2
+    default = simple
 ```
