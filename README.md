@@ -106,3 +106,18 @@ You may want to set up a ``~/.gitconfig.local`` to prevent git from complaining 
     # Requires git version >= 2
     default = simple
 ```
+
+## OSX Specifics
+We probably want the GNU coreutils instead of the defaults that OSX ships.
+
+```bash
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt
+```
+
+and then add these utils to your ``PATH`` (probably in ``.bash_exports.local``)
+
+```bash
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+```
+
+You can likewise install the GNU version ``nano``
