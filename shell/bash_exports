@@ -24,6 +24,9 @@ export HISTSIZE=
 # Don't add certain commands to the history file
 export HISTIGNORE='&:[bf]g:c:clear:history:exit:q:pwd:* --help'
 
+# Add timestamps
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M.%S | '
+
 # Prefer US English and use UTF-8 encoding
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
