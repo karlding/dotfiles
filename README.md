@@ -14,11 +14,14 @@ You may also want to install bash-completion (which is a dependency that is used
 sudo apt-get install bash-completion
 ```
 
-For OSX, simply install using ``brew``.
+For OSX, simply install applications using ``brew``.
 
 ```bash
+brew install git
 brew install bash-completion
 ```
+
+``brew install git`` will install ``git`` and ``git-completion``, giving us the ``__git_ps1`` prompt.
 
 ### Symlinking
 Then, symlink all the things (or copy them manually)! On Windows, you can run ``setup/symlinks.bat`` which will symlink everything for you (using hardlinks). One of the downsides of this is that when making changes, ``git`` will not track them if you edit the hardlinked file&mdash;you must make your changes in the ``dotfiles/`` directory, which will update the hardlinked file (ie. don't do ``vim ~/.bash_profile``, and do ``vim ~/dotfiles/shell/.bash_profile`` instead).
