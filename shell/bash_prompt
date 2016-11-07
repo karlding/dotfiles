@@ -3,7 +3,7 @@
 # Includes custom character for the prompt, path, and Git branch name.
 
 PS1='\n\[$(tput setaf 5)\]'
-PS1+=' 🍆 '                                     # eggplant fam
+PS1+=' →  '
 PS1+='\[$(tput setaf 6)\]'
 PS1+='\w'                                       # Terminal title (set to the
                                                 # current working directory)
