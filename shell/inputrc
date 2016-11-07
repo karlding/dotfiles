@@ -47,4 +47,5 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
-[ -f ~/.inputrc.local ] && source ~/.inputrc.local
+# source local override file if one exists
+$include ~/.inputrc.local
