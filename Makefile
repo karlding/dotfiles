@@ -1,78 +1,217 @@
-DOTFILES := $(shell pwd)
+DOTFILES := $(CURDIR)
+BACKUP := $(DOTFILES)/backup/
+
+OSFLAG 				:=
+ifeq ($(OS),Windows_NT)
+	OSFLAG += Windows
+else
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S),Linux)
+		OSFLAG = Linux
+	endif
+	ifeq ($(UNAME_S),Darwin)
+		OSFLAG = Mac
+	endif
+endif
 
 .PHONY: install \
 	install-bash \
+	install-editorconfig \
 	install-gdb \
 	install-git \
 	install-nano \
 	install-psql \
 	install-sqlite \
 	install-sublime \
+	install-top \
 	install-tmux \
 	install-vim \
 	install-weechat
 
 all: install
 
-install:
-	install-bash \
+install: install-bash \
+	install-editorconfig \
 	install-gdb \
 	install-git \
 	install-nano \
 	install-psql \
 	install-sqlite \
 	install-sublime \
+	install-top \
 	install-tmux \
 	install-vim \
 	install-weechat
 
 install-bash:
+ifneq ("$(wildcard ~/.bash_aliases)","")
+	@echo "Backing up bash_aliases"
+	cp ~/.bash_aliases $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.bash_exports)","")
+	@echo "Backing up bash_exports"
+	cp ~/.bash_exports $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.bash_functions)","")
+	@echo "Backing up bash_functions"
+	cp ~/.bash_functions $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.bash_options)","")
+	@echo "Backing up bash_options"
+	cp ~/.bash_options $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.bash_profile)","")
+	@echo "Backing up bash_profile"
+	cp ~/.bash_profile $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.bash_prompt)","")
+	@echo "Backing up bash_prompt"
+	cp ~/.bash_prompt $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.bashrc)","")
+	@echo "Backing up bashrc"
+	cp ~/.bashrc $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.dircolors)","")
+	@echo "Backing up dircolors"
+	cp ~/.dircolors $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.inputrc)","")
+	@echo "Backing up inputrc"
+	cp ~/.inputrc $(BACKUP_DIR)
+endif
+ifneq ("$(wildcard ~/.bash_autocomplete)","")
+	@echo "Backing up bash_autocomplete"
+	cp ~/.bash_autocomplete $(BACKUP_DIR)
+endif
 	@echo "Symlinking bash files"
-	ln -s $(DOTFILES)/shell/bash_aliases ~/.bash_aliases
-	ln -s $(DOTFILES)/shell/bash_exports ~/.bash_exports
-	ln -s $(DOTFILES)/shell/bash_functions ~/.bash_functions
-	ln -s $(DOTFILES)/shell/bash_options ~/.bash_options
-	ln -s $(DOTFILES)/shell/bash_profile ~/.bash_profile
-	ln -s $(DOTFILES)/shell/bash_prompt ~/.bash_prompt
-	ln -s $(DOTFILES)/shell/bashrc ~/.bashrc
-	ln -s $(DOTFILES)/shell/dircolors ~/.dircolors
-	ln -s $(DOTFILES)/shell/inputrc ~/.inputrc
+	ln -sf $(DOTFILES)/shell/bash/bash_aliases ~/.bash_aliases
+	ln -sf $(DOTFILES)/shell/bash/bash_exports ~/.bash_exports
+	ln -sf $(DOTFILES)/shell/bash/bash_functions ~/.bash_functions
+	ln -sf $(DOTFILES)/shell/bash/bash_options ~/.bash_options
+	ln -sf $(DOTFILES)/shell/bash/bash_profile ~/.bash_profile
+	ln -sf $(DOTFILES)/shell/bash/bash_prompt ~/.bash_prompt
+	ln -sf $(DOTFILES)/shell/bash/bashrc ~/.bashrc
+	ln -sf $(DOTFILES)/shell/dircolors ~/.dircolors
+	ln -sf $(DOTFILES)/shell/inputrc ~/.inputrc
+ifeq ($(OSFLAG),Linux)
+	ln -sf $(DOTFILES)/shell/bash/autocomplete/ubuntu/bash_autocomplete ~/.bash_autocomplete
+else
+ifeq ($(OSFLAG),Mac)
+	ln -sf $(DOTFILES)/shell/bash/autocomplete/macos/bash_autocomplete ~/.bash_autocomplete
+endif
+endif
+
+install-curl:
+ifneq ("$(wildcard ~/.curlrc)","")
+	@echo "Backing up curlrc"
+	cp ~/.curlrc $(BACKUP_DIR)
+endif
+	@echo "Symlinking curl files"
+	ln -sf $(DOTFILES)/curl/curlrc ~/.curlrc
+
+install-editorconfig:
+ifneq ("$(wildcard ~/.editorconfig)","")
+	@echo "Backing up EditorConfig file"
+	cp ~/.editorconfig $(BACKUP_DIR)
+endif
+	@echo "Installing EditorConfig file"
+	ln -sf $(DOTFILES)/editorconfig/editorconfig ~/.editorconfig
 
 install-gdb:
+ifneq ("$(wildcard ~/.gdbinit)","")
+	@echo "Backing up .gdbinit"
+	cp ~/.gitconfig $(BACKUP_DIR)
+endif
 	@echo "Symlinking gdb files"
-	ln -s $(DOTFILES)/gdb/gdbinit ~/.gdbinit
+	ln -sf $(DOTFILES)/gdb/gdbinit ~/.gdbinit
 
 install-git:
+ifneq ("$(wildcard ~/.gitconfig)","")
+	@echo "Backing up .gitconfig"
+	cp ~/.gitconfig $(BACKUP_DIR)
+endif
+
+ifneq ("$(wildcard ~/.gitignore)","")
+	@echo "Backing up .gitingore"
+	cp ~/.gitingore $(BACKUP_DIR)
+endif
 	@echo "Symlinking git files"
-	ln -s $(DOTFILES)/git/gitconfig ~/.gitconfig
-	ln -s $(DOTFILES)/git/gitignore ~/.gitignore
+	ln -sf $(DOTFILES)/git/gitconfig ~/.gitconfig
+	ln -sf $(DOTFILES)/git/gitignore ~/.gitignore
 
 install-nano:
+ifneq ("$(wildcard ~/.nano)","")
+	@echo "Backing up .nano"
+	cp -r ~/.nano $(BACKUP_DIR)
+endif
+
+ifneq ("$(wildcard ~/.nanorc)","")
+	@echo "Backing up nanorc"
+	cp ~/.nanorc $(BACKUP_DIR)
+endif
 	@echo "Symlinking nano files"
-	ln -s $(DOTFILES)/nano/.nano ~/.nano
-	ln -s $(DOTFILES)/nano/nanorc ~/.nanorc
+	ln -sf $(DOTFILES)/nano/.nano ~/.nano
+	ln -sf $(DOTFILES)/nano/nanorc ~/.nanorc
 
 install-psql:
+ifneq ("$(wildcard ~/.psqlrc)","")
+	@echo "Backing up psql files"
+	cp ~/.psqlrc $(BACKUP_DIR)
+endif
 	@echo "Symlinking psql files"
-	ln -s $(DOTFILES)/psql/psqlrc ~/.psqlrc
+	ln -sf $(DOTFILES)/psql/psqlrc ~/.psqlrc
 
 install-sqlite:
+ifneq ("$(wildcard ~/.sqliterc)","")
+	@echo "Backing up sqlite files"
+	cp ~/.sqliterc $(BACKUP_DIR)
+endif
 	@echo "Symlinking sqlite files"
-	ln -s $(DOTFILES)/sqlite/sqliterc ~/.sqliterc
+	ln -sf $(DOTFILES)/sqlite/sqliterc ~/.sqliterc
 
 install-sublime:
-	@echo "Symlinking Sublime files"
-	ln -s $(DOTFILES)/subl/User ~/.config/sublime-text-3/Packages/User
+ifeq ($(OSFLAG),Linux)
+	@echo "Symlinking Sublime files for Linux"
+	ln -sf $(DOTFILES)/subl/User ~/.config/sublime-text-3/Packages/User
+else
+ifeq ($(OSFLAG),Mac)
+	@echo "Symlinking Sublime files for macOS"
+	ln -sf $(DOTFILES)/subl/User "~/Library/Application Support/Sublime Text 3/User"
+endif
+endif
+
+install-top:
+ifneq ("$(wildcard ~/.toprc)","")
+	@echo "Backing up top files"
+	cp ~/.toprc $(BACKUP_DIR)
+endif
+
+	@echo "Symlinking top files"
+	ln -sf $(DOTFILES)/top/toprc ~/.toprc
 
 install-tmux:
+ifneq ("$(wildcard ~/.tmux.conf)","")
+	@echo "Backing up tmux files"
+	cp ~/.tmux.conf $(BACKUP_DIR)
+endif
 	@echo "Symlinking tmux files"
-	ln -s $(DOTFILES)/tmux/tmux.conf ~/.tmux.conf
+	ln -sf $(DOTFILES)/tmux/tmux.conf ~/.tmux.conf
 
 install-vim:
+ifneq ("$(wildcard ~/.vim)","")
+	@echo "Backing up .vim"
+	cp -r ~/.vim $(BACKUP_DIR)
+endif
+
+ifneq ("$(wildcard ~/.vimrc)","")
+	@echo "Backing up .vimrc"
+	cp ~/.vimrc $(BACKUP_DIR)
+endif
 	@echo "Symlinking vim files"
-	ln -s $(DOTFILES)/vim/.vim ~/.vim
-	ln -s $(DOTFILES)/vim/vimrc ~/.vimrc
+	ln -sf $(DOTFILES)/vim/.vim ~/.vim
+	ln -sf $(DOTFILES)/vim/vimrc ~/.vimrc
 
 install-weechat:
 	@echo "Symlinking weechat files"
-	ln -s $(DOTFILES)/weechat/.weechat ~/.weechat
+	ln -sf $(DOTFILES)/weechat/.weechat ~/.weechat
