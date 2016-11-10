@@ -14,13 +14,13 @@ Thumbs.db
 .Trashes
 
 # working files
-vim/.vim/viminfo
-vim/.vim/swaps
-vim/.vim/undo
-vim/.vim/backups
+src/vim/.vim/viminfo
+src/vim/.vim/swaps
+src/vim/.vim/undo
+src/vim/.vim/backups
 
 # Vundle
-vim/.vim/bundle
+src/vim/.vim/bundle
 
 # git credential file
 .gitconfig.local
@@ -30,14 +30,14 @@ setup/*.log
 
 # Sublime Text 3
 # Package Control: https://packagecontrol.io/docs/syncing
-subl/User/Package\ Control.last-run
-subl/User/Package\ Control.ca-list
-subl/User/Package\ Control.ca-bundle
-subl/User/Package\ Control.system-ca-bundle
-subl/User/Package\ Control.cache/
-subl/User/Package\ Control.ca-certs/
-subl/User/Package\ Control.merged-ca-bundle
-subl/User/Package\ Control.user-ca-bundle
+src/subl/User/Package\ Control.last-run
+src/subl/User/Package\ Control.ca-list
+src/subl/User/Package\ Control.ca-bundle
+src/subl/User/Package\ Control.system-ca-bundle
+src/subl/User/Package\ Control.cache/
+src/subl/User/Package\ Control.ca-certs/
+src/subl/User/Package\ Control.merged-ca-bundle
+src/subl/User/Package\ Control.user-ca-bundle
 
 # Atom
 # http://jbranchaud.github.io/splitting-atoms/adding-atom-to-dotfiles.html
@@ -45,10 +45,10 @@ atom/packages
 atom/storage
 
 # Weechat
-weechat/.weechat/certs
-weechat/.weechat/logs
-weechat/.weechat/script
-weechat/.weechat/sec.conf
-weechat/.weechat/weechat.log
-weechat/.weechat/urls.log
+src/weechat/.weechat/certs
+src/weechat/.weechat/logs
+src/weechat/.weechat/script
+src/weechat/.weechat/sec.conf
+src/weechat/.weechat/weechat.log
+src/weechat/.weechat/urls.log
 

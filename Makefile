@@ -1,5 +1,6 @@
 DOTFILES := $(CURDIR)
-BACKUP := $(DOTFILES)/backup/
+DOTFILES_DIR := $(DOTFILES)/src
+BACKUP_DIR := $(DOTFILES)/backup/
 
 OSFLAG 				:=
 ifeq ($(OS),Windows_NT)
@@ -85,20 +86,20 @@ ifneq ("$(wildcard ~/.bash_autocomplete)","")
 	cp ~/.bash_autocomplete $(BACKUP_DIR)
 endif
 	@echo "Symlinking bash files"
-	ln -sf $(DOTFILES)/shell/bash/bash_aliases ~/.bash_aliases
-	ln -sf $(DOTFILES)/shell/bash/bash_exports ~/.bash_exports
-	ln -sf $(DOTFILES)/shell/bash/bash_functions ~/.bash_functions
-	ln -sf $(DOTFILES)/shell/bash/bash_options ~/.bash_options
-	ln -sf $(DOTFILES)/shell/bash/bash_profile ~/.bash_profile
-	ln -sf $(DOTFILES)/shell/bash/bash_prompt ~/.bash_prompt
-	ln -sf $(DOTFILES)/shell/bash/bashrc ~/.bashrc
-	ln -sf $(DOTFILES)/shell/dircolors ~/.dircolors
-	ln -sf $(DOTFILES)/shell/inputrc ~/.inputrc
+	ln -sf $(DOTFILES_DIR)/shell/bash/bash_aliases ~/.bash_aliases
+	ln -sf $(DOTFILES_DIR)/shell/bash/bash_exports ~/.bash_exports
+	ln -sf $(DOTFILES_DIR)/shell/bash/bash_functions ~/.bash_functions
+	ln -sf $(DOTFILES_DIR)/shell/bash/bash_options ~/.bash_options
+	ln -sf $(DOTFILES_DIR)/shell/bash/bash_profile ~/.bash_profile
+	ln -sf $(DOTFILES_DIR)/shell/bash/bash_prompt ~/.bash_prompt
+	ln -sf $(DOTFILES_DIR)/shell/bash/bashrc ~/.bashrc
+	ln -sf $(DOTFILES_DIR)/shell/dircolors ~/.dircolors
+	ln -sf $(DOTFILES_DIR)/shell/inputrc ~/.inputrc
 ifeq ($(OSFLAG),Linux)
-	ln -sf $(DOTFILES)/shell/bash/autocomplete/ubuntu/bash_autocomplete ~/.bash_autocomplete
+	ln -sf $(DOTFILES_DIR)/shell/bash/autocomplete/ubuntu/bash_autocomplete ~/.bash_autocomplete
 else
 ifeq ($(OSFLAG),Mac)
-	ln -sf $(DOTFILES)/shell/bash/autocomplete/macos/bash_autocomplete ~/.bash_autocomplete
+	ln -sf $(DOTFILES_DIR)/shell/bash/autocomplete/macos/bash_autocomplete ~/.bash_autocomplete
 endif
 endif
 
@@ -108,7 +109,7 @@ ifneq ("$(wildcard ~/.curlrc)","")
 	cp ~/.curlrc $(BACKUP_DIR)
 endif
 	@echo "Symlinking curl files"
-	ln -sf $(DOTFILES)/curl/curlrc ~/.curlrc
+	ln -sf $(DOTFILES_DIR)/curl/curlrc ~/.curlrc
 
 install-editorconfig:
 ifneq ("$(wildcard ~/.editorconfig)","")
@@ -116,7 +117,7 @@ ifneq ("$(wildcard ~/.editorconfig)","")
 	cp ~/.editorconfig $(BACKUP_DIR)
 endif
 	@echo "Installing EditorConfig file"
-	ln -sf $(DOTFILES)/editorconfig/editorconfig ~/.editorconfig
+	ln -sf $(DOTFILES_DIR)/editorconfig/editorconfig ~/.editorconfig
 
 install-gdb:
 ifneq ("$(wildcard ~/.gdbinit)","")
@@ -124,7 +125,7 @@ ifneq ("$(wildcard ~/.gdbinit)","")
 	cp ~/.gitconfig $(BACKUP_DIR)
 endif
 	@echo "Symlinking gdb files"
-	ln -sf $(DOTFILES)/gdb/gdbinit ~/.gdbinit
+	ln -sf $(DOTFILES_DIR)/gdb/gdbinit ~/.gdbinit
 
 install-git:
 ifneq ("$(wildcard ~/.gitconfig)","")
@@ -137,8 +138,8 @@ ifneq ("$(wildcard ~/.gitignore)","")
 	cp ~/.gitingore $(BACKUP_DIR)
 endif
 	@echo "Symlinking git files"
-	ln -sf $(DOTFILES)/git/gitconfig ~/.gitconfig
-	ln -sf $(DOTFILES)/git/gitignore ~/.gitignore
+	ln -sf $(DOTFILES_DIR)/git/gitconfig ~/.gitconfig
+	ln -sf $(DOTFILES_DIR)/git/gitignore ~/.gitignore
 
 install-nano:
 ifneq ("$(wildcard ~/.nano)","")
@@ -151,8 +152,8 @@ ifneq ("$(wildcard ~/.nanorc)","")
 	cp ~/.nanorc $(BACKUP_DIR)
 endif
 	@echo "Symlinking nano files"
-	ln -sf $(DOTFILES)/nano/.nano ~/.nano
-	ln -sf $(DOTFILES)/nano/nanorc ~/.nanorc
+	ln -sf $(DOTFILES_DIR)/nano/.nano ~/.nano
+	ln -sf $(DOTFILES_DIR)/nano/nanorc ~/.nanorc
 
 install-psql:
 ifneq ("$(wildcard ~/.psqlrc)","")
@@ -160,7 +161,7 @@ ifneq ("$(wildcard ~/.psqlrc)","")
 	cp ~/.psqlrc $(BACKUP_DIR)
 endif
 	@echo "Symlinking psql files"
-	ln -sf $(DOTFILES)/psql/psqlrc ~/.psqlrc
+	ln -sf $(DOTFILES_DIR)/psql/psqlrc ~/.psqlrc
 
 install-sqlite:
 ifneq ("$(wildcard ~/.sqliterc)","")
@@ -168,16 +169,16 @@ ifneq ("$(wildcard ~/.sqliterc)","")
 	cp ~/.sqliterc $(BACKUP_DIR)
 endif
 	@echo "Symlinking sqlite files"
-	ln -sf $(DOTFILES)/sqlite/sqliterc ~/.sqliterc
+	ln -sf $(DOTFILES_DIR)/sqlite/sqliterc ~/.sqliterc
 
 install-sublime:
 ifeq ($(OSFLAG),Linux)
 	@echo "Symlinking Sublime files for Linux"
-	ln -sf $(DOTFILES)/subl/User ~/.config/sublime-text-3/Packages/User
+	ln -sf $(DOTFILES_DIR)/subl/User ~/.config/sublime-text-3/Packages/User
 else
 ifeq ($(OSFLAG),Mac)
 	@echo "Symlinking Sublime files for macOS"
-	ln -sf $(DOTFILES)/subl/User "~/Library/Application Support/Sublime Text 3/User"
+	ln -sf $(DOTFILES_DIR)/subl/User "~/Library/Application Support/Sublime Text 3/User"
 endif
 endif
 
@@ -188,7 +189,7 @@ ifneq ("$(wildcard ~/.toprc)","")
 endif
 
 	@echo "Symlinking top files"
-	ln -sf $(DOTFILES)/top/toprc ~/.toprc
+	ln -sf $(DOTFILES_DIR)/top/toprc ~/.toprc
 
 install-tmux:
 ifneq ("$(wildcard ~/.tmux.conf)","")
@@ -196,7 +197,7 @@ ifneq ("$(wildcard ~/.tmux.conf)","")
 	cp ~/.tmux.conf $(BACKUP_DIR)
 endif
 	@echo "Symlinking tmux files"
-	ln -sf $(DOTFILES)/tmux/tmux.conf ~/.tmux.conf
+	ln -sf $(DOTFILES_DIR)/tmux/tmux.conf ~/.tmux.conf
 
 install-vim:
 ifneq ("$(wildcard ~/.vim)","")
@@ -209,9 +210,9 @@ ifneq ("$(wildcard ~/.vimrc)","")
 	cp ~/.vimrc $(BACKUP_DIR)
 endif
 	@echo "Symlinking vim files"
-	ln -sf $(DOTFILES)/vim/.vim ~/.vim
-	ln -sf $(DOTFILES)/vim/vimrc ~/.vimrc
+	ln -sf $(DOTFILES_DIR)/vim/.vim ~/.vim
+	ln -sf $(DOTFILES_DIR)/vim/vimrc ~/.vimrc
 
 install-weechat:
 	@echo "Symlinking weechat files"
-	ln -sf $(DOTFILES)/weechat/.weechat ~/.weechat
+	ln -sf $(DOTFILES_DIR)/weechat/.weechat ~/.weechat
