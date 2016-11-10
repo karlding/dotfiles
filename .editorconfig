@@ -15,3 +15,11 @@ trim_trailing_whitespace = true
 # Markdown uses the trailing whitespaces
 # https://daringfireball.net/projects/markdown/syntax#block
 trim_trailing_whitespace = false
+
+[.travis.yml]
+indent_size = 2
+indent_style = space
+
+[Makefile]
+indent_style = tab
+indent_size = 8
