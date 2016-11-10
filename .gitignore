@@ -52,5 +52,3 @@ weechat/.weechat/sec.conf
 weechat/.weechat/weechat.log
 weechat/.weechat/urls.log
 
-# backups
-backup/
