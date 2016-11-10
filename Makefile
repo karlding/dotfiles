@@ -1,4 +1,4 @@
-DOTFILES := $(CURDIR)
+DOTFILES := $(CURDIR)/src
 BACKUP := $(DOTFILES)/backup/
 
 OSFLAG 				:=
@@ -26,7 +26,8 @@ endif
 	install-top \
 	install-tmux \
 	install-vim \
-	install-weechat
+	install-weechat \
+	install-wget
 
 all: install
 
@@ -41,7 +42,8 @@ install: install-bash \
 	install-top \
 	install-tmux \
 	install-vim \
-	install-weechat
+	install-weechat \
+	install-wget
 
 install-bash:
 ifneq ("$(wildcard ~/.bash_aliases)","")
@@ -211,6 +213,14 @@ endif
 	@echo "Symlinking vim files"
 	ln -sf $(DOTFILES)/vim/.vim ~/.vim
 	ln -sf $(DOTFILES)/vim/vimrc ~/.vimrc
+
+install-wget:
+ifneq ("$(wildcard ~/.wgetrc)","")
+	@echo "Backing up .wgetrc"
+	cp ~/.wgetrc $(BACKUP_DIR)
+endif
+	@echo "Symlinking wget files"
+	ln -sf $(DOTFILES)/wget/wgetrc ~/.wgetrc
 
 install-weechat:
 	@echo "Symlinking weechat files"
