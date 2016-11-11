@@ -1,0 +1,13 @@
+script:
+  - make install
+
+language: generic
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+    - os: osx
+      osx_image: xcode8
+
+sudo: required
