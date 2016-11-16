@@ -210,7 +210,7 @@ ifneq ("$(wildcard ~/.vimrc)","")
 	cp ~/.vimrc $(BACKUP_DIR)
 endif
 	@echo "Symlinking vim files"
-	ln -sf $(DOTFILES_DIR)/vim/.vim ~/.vim
+	ln -sf $(DOTFILES_DIR)/vim/.vim ~/
 	ln -sf $(DOTFILES_DIR)/vim/vimrc ~/.vimrc
 
 install-weechat:
