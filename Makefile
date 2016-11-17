@@ -38,11 +38,9 @@ install: install-bash \
 	install-nano \
 	install-psql \
 	install-sqlite \
-	install-sublime \
 	install-top \
 	install-tmux \
-	install-vim \
-	install-weechat
+	install-vim
 
 install-bash:
 ifneq ("$(wildcard ~/.bash_aliases)","")
