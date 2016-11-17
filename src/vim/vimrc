@@ -90,6 +90,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 
 
+" EditorConfig
+" https://github.com/editorconfig/editorconfig-vim
+Plugin 'editorconfig/editorconfig-vim'
+
+
 " neocomplete
 Plugin 'shougo/neocomplete.vim'
 
