@@ -104,6 +104,9 @@ include "~/.nano/css.nanorc"
 ## Cython
 include "~/.nano/cython.nanorc"
 
+## Docker
+include "~/.nano/Dockerfile.nanorc"
+
 ## HAML
 include "~/.nano/haml.nanorc"
 
