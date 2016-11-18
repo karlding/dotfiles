@@ -1,4 +1,7 @@
 # [Karl](https://justkding.me)'s dotfiles
+
+[![Build Status](https://travis-ci.org/karlding/dotfiles.svg?branch=master)](https://travis-ci.org/karlding/dotfiles)
+
 [Karl](https://justkding.me) attempts to do dotfiles. These are my dotfiles I am using for my laptop's current setup.
 
 ## Setup
