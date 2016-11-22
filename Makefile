@@ -20,6 +20,7 @@ endif
 	install-editorconfig \
 	install-gdb \
 	install-git \
+	install-hg \
 	install-nano \
 	install-psql \
 	install-sqlite \
@@ -35,6 +36,7 @@ install: install-bash \
 	install-editorconfig \
 	install-gdb \
 	install-git \
+	install-hg \
 	install-nano \
 	install-psql \
 	install-sqlite \
@@ -138,6 +140,14 @@ endif
 	@echo "Symlinking git files"
 	ln -sf $(DOTFILES_DIR)/git/gitconfig ~/.gitconfig
 	ln -sf $(DOTFILES_DIR)/git/gitignore ~/.gitignore
+
+install-hg:
+ifneq ("$(wildcard ~/.hgignore)","")
+	@echo "Backing up .hgignore"
+	cp ~/.hgignore $(BACKUP_DIR)
+endif
+	@echo "Symlinking hgignore files"
+	ln -sf $(DOTFILES_DIR)/hg/hgignore ~/.hgignore
 
 install-nano:
 ifneq ("$(wildcard ~/.nano)","")
