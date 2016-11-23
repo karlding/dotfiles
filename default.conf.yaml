@@ -2,7 +2,10 @@
     link:
       create: true
       relink: true
+      force: true
+
 - clean: ['~']
+
 - link:
     ~/.dotfiles: ''
     ~/.bash_aliases: src/shell/bash/bash_aliases
@@ -14,15 +17,15 @@
     ~/.bashrc: src/shell/bash/bashrc
     ~/.curlrc: src/curl/curlrc
     ~/.dircolors: src/shell/dircolors
-    ~/.editorconfig: src/shell/editorconfig
+    ~/.editorconfig: src/editorconfig/editorconfig
     ~/.hgignore: src/hg/hgignore
     ~/.inputrc: src/shell/inputrc
-    ~/.nano: src/nano/.nano
+    ~/.nano: src/nano/.nano/
     ~/.nanorc: src/nano/nanorc
     ~/.psqlrc: src/psql/psqlrc
     ~/.sqliterc: src/sqlite/sqliterc
     ~/.tmux.conf: src/tmux/tmux.conf
-    ~/.vim: src/vim/.vim
+    ~/.vim: src/vim/.vim/
     ~/.vimrc: src/vim/vimrc
     ~/.wgetrc: src/wget/wgetrc
     ~/.gitconfig: src/git/gitconfig
