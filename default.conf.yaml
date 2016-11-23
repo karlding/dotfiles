@@ -1,0 +1,32 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+- clean: ['~']
+- link:
+    ~/.dotfiles: ''
+    ~/.bash_aliases: src/shell/bash/bash_aliases
+    ~/.bash_exports: src/shell/bash/bash_exports
+    ~/.bash_functions: src/shell/bash/bash_functions
+    ~/.bash_options: src/shell/bash/bash_options
+    ~/.bash_profile: src/shell/bash/bash_profile
+    ~/.bash_prompt: src/shell/bash/bash_prompt
+    ~/.bashrc: src/shell/bash/bashrc
+    ~/.curlrc: src/curl/curlrc
+    ~/.dircolors: src/shell/dircolors
+    ~/.editorconfig: src/shell/editorconfig
+    ~/.hgignore: src/hg/hgignore
+    ~/.inputrc: src/shell/inputrc
+    ~/.nano: src/nano/.nano
+    ~/.nanorc: src/nano/nanorc
+    ~/.psqlrc: src/psql/psqlrc
+    ~/.sqliterc: src/sqlite/sqliterc
+    ~/.tmux.conf: src/tmux/tmux.conf
+    ~/.vim: src/vim/.vim
+    ~/.vimrc: src/vim/vimrc
+    ~/.wgetrc: src/wget/wgetrc
+    ~/.gitconfig: src/git/gitconfig
+    ~/.gitignore: src/git/gitignore
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
