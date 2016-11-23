@@ -4,7 +4,7 @@
       relink: true
       force: true
 
-- clean: ['~']
+- clean: ['~', '~/.config']
 
 - link:
     ~/.dotfiles: ''
@@ -20,12 +20,12 @@
     ~/.editorconfig: src/editorconfig/editorconfig
     ~/.hgignore: src/hg/hgignore
     ~/.inputrc: src/shell/inputrc
-    ~/.nano: src/nano/.nano/
+    ~/.nano: src/nano/.nano
     ~/.nanorc: src/nano/nanorc
     ~/.psqlrc: src/psql/psqlrc
     ~/.sqliterc: src/sqlite/sqliterc
     ~/.tmux.conf: src/tmux/tmux.conf
-    ~/.vim: src/vim/.vim/
+    ~/.vim: src/vim/.vim
     ~/.vimrc: src/vim/vimrc
     ~/.wgetrc: src/wget/wgetrc
     ~/.gitconfig: src/git/gitconfig
@@ -33,3 +33,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim", Installing Vundle]
+  - [vim +BundleInstall +qall, Install Vundle modules]
