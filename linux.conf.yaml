@@ -1,0 +1,10 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+        force: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/sublime-text-3/Packages/User: src/subl/User
