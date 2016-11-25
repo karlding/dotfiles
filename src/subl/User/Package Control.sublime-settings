@@ -1,0 +1,13 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"EditorConfig",
+		"Markdown Preview",
+		"Package Control",
+		"rsub",
+		"Theme - Spacegray"
+	]
+}
