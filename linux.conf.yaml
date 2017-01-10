@@ -7,4 +7,5 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.bash_autocomplete: src/shell/bash/autocomplete/ubuntu/bash_autocomplete
     ~/.config/sublime-text-3/Packages/User: src/subl/User
