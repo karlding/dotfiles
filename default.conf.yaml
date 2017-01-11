@@ -33,5 +33,3 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim", Installing Vundle]
-  - [vim +BundleInstall +qall, Install Vundle modules]
