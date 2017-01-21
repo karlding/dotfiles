@@ -8,3 +8,4 @@
 
 - link:
     ~/.bash_autocomplete: src/shell/bash/autocomplete/macos/bash_autocomplete
+    '~/Library/Application Support/Sublime Text 3/Packages/User': src/subl/User
