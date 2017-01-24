@@ -38,6 +38,7 @@ src/subl/User/Package\ Control.cache/
 src/subl/User/Package\ Control.ca-certs/
 src/subl/User/Package\ Control.merged-ca-bundle
 src/subl/User/Package\ Control.user-ca-bundle
+src/subl/User/oscrypto-ca-bundle.crt
 
 # Atom
 # http://jbranchaud.github.io/splitting-atoms/adding-atom-to-dotfiles.html
