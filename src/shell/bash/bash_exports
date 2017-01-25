@@ -49,4 +49,11 @@ export PYTHONIOENCODING="UTF-8"
 # Add RVM to PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# Add Android SDK
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# Add nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 [ -f ~/.bash_exports.local ] && source ~/.bash_exports.local
