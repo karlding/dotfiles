@@ -5,7 +5,7 @@
 [Karl](https://justkding.me) attempts to do dotfiles. These are my dotfiles I am using for my laptop's current setup.
 
 ## Setup
-Clone the repository somewhere. It doesn't really matter where, since we will be symlinking the dotfiles anyways. ``.local`` versions of the files will be sourced after.
+Clone the repository somewhere. The location doesn't really matter, since we will be symlinking the dotfiles anyways. ``.local`` versions of the files will be sourced after.
 
 ```bash
 git clone https://github.com/karlding/dotfiles.git
@@ -26,8 +26,29 @@ brew install bash-completion
 
 ``brew install git`` will install ``git`` and ``git-completion``, giving us the ``__git_ps1`` prompt.
 
+Then run
+
+```bash
+cd dotfiles
+./install
+```
+
+If you wish to install OS specifics, you can do
+
+```bash
+./install linux
+```
+
+or for macos
+
+```bash
+./install macos
+```
+
+Unfortunately, I haven't had a chance to automate ``mklink``.
+
 ### Symlinking
-Then, symlink all the things (or copy them manually)! On Windows, you can run ``setup/symlinks.bat`` which will symlink everything for you (using hardlinks). One of the downsides of this is that when making changes, ``git`` will not track them if you edit the hardlinked file&mdash;you must make your changes in the ``dotfiles/`` directory, which will update the hardlinked file (ie. don't do ``vim ~/.bash_profile``, and do ``vim ~/dotfiles/shell/.bash_profile`` instead).
+If you prefer to do things the manual way
 
 #### ConEmu
 Symlink the ``conemu.xml`` file to ``%APPDATA%\ConEmu.xml``.
@@ -117,13 +138,30 @@ You may want to set up a ``~/.gitconfig.local`` to prevent git from complaining 
 We probably want the GNU coreutils instead of the defaults that OSX ships.
 
 ```bash
-brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt
+brew tap homebrew/dupes
+brew install gawk gnutls gnu-indent gnu-getopt wget
+brew install findutils --with-default-names
+brew install gnu-sed --with-default-names
+brew install gnu-tar --with-default-names
+brew install gnu-which --with-default-names
+brew install gnutls --with-default-names
+brew install grep --with-default-names
+brew install coreutils
+brew install binutils
+brew install diffutils
+brew install gzip
+brew install watch
+brew install tmux 
+brew install wget
+brew install nmap
+brew install gpg
+brew install htop
+brew install nano
 ```
+
 
 and then add these utils to your ``PATH`` (probably in ``.bash_exports.local``)
 
 ```bash
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 ```
-
-You can likewise install the GNU version ``nano``
