@@ -1,0 +1,12 @@
+[extensions]
+# enable ColorExtension
+color =
+# enable PagerExtension
+pager =
+
+[pager]
+pager = LESS='FRX' less
+quiet = True
+
+# Allow local customizations
+%include ~/.hgrc_local

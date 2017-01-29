@@ -30,6 +30,7 @@
     ~/.wgetrc: src/wget/wgetrc
     ~/.gitconfig: src/git/gitconfig
     ~/.gitignore: src/git/gitignore
+    ~/.hgrc: src/hg/hgrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
