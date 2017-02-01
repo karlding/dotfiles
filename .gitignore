@@ -53,3 +53,5 @@ src/weechat/.weechat/sec.conf
 src/weechat/.weechat/weechat.log
 src/weechat/.weechat/urls.log
 
+# psql
+src/psql/psqlrc.local
