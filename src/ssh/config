@@ -1,0 +1,11 @@
+Host *
+  # Protocol 1 is less secure and should not be used
+  Protocol 2
+
+  # Keeping an SSH connection alive
+  TCPKeepAlive yes
+  ServerAliveCountMax 10
+  ServerAliveInterval 20
+
+# Include local ssh config
+Include ~/.ssh/config.local
