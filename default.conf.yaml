@@ -33,6 +33,7 @@
     ~/.gitignore: src/git/gitignore
     ~/.hgrc: src/hg/hgrc
     ~/.ssh/config: src/ssh/config
+    ~/.gemrc: src/ruby/gemrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
