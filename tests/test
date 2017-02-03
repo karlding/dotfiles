@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd "$(dirname "${BASH_SOURCE[0]}")" \
+    && source "utils.sh"
+
+if [ `get_os` == "macos" ]; then
+    ../install macos
+elif [ `get_os` == "ubuntu" ]; then
+    ../install linux
+elif [ `get_os` == "windows" ]; then
+    echo "Windows has no tests"
+else
+    echo "[ERROR]: Unknown OS"
+    echo `get_os`
+fi
