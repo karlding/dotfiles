@@ -70,6 +70,12 @@ bind ^] cancel all
 ## Apache
 include "~/.nano/apacheconf.nanorc"
 
+## Arduino
+include "~/.nano/arduino.nanorc"
+
+## ASCIIDoc
+include "~/.nano/asciidoc.nanorc"
+
 ## asm
 include "~/.nano/asm.nanorc"
 
@@ -85,29 +91,62 @@ include "~/.nano/conky.nanorc"
 ## C/C++
 include "~/.nano/c.nanorc"
 
+## Clojure
+include "~/.nano/clojure.nanorc"
+
+## CMake
+include "~/.nano/cmake.nanorc"
+
+## Colortest
+include "~/.nano/colortest.nanorc"
+
 ## C#
 include "~/.nano/csharp.nanorc"
 
 ## CSS
 include "~/.nano/css.nanorc"
 
-## git
-include "~/.nano/git.nanorc"
-include "~/.nano/gitcommit.nanorc"
-
-## golang
-include "~/.nano/go.nanorc"
-
-## CSS
-include "~/.nano/css.nanorc"
-
-## Cython
+# Cython
 include "~/.nano/cython.nanorc"
 
 ## Docker
 include "~/.nano/Dockerfile.nanorc"
 
-## HAML
+## dot
+include "~/.nano/dot.nanorc"
+
+## email
+include "~/.nano/email.nanorc"
+
+## erb
+include "~/.nano/erb.nanorc"
+
+## fish
+include "~/.nano/fish.nanorc"
+
+## fortran
+include "~/.nano/fortran.nanorc"
+
+## genie
+include "~/.nano/genie.nanorc"
+
+## gentoo
+include "~/.nano/gentoo.nanorc"
+
+## git
+include "~/.nano/git.nanorc"
+include "~/.nano/gitcommit.nanorc"
+
+## glsl
+include "~/.nano/glsl.nanorc"
+
+## golang
+include "~/.nano/go.nanorc"
+
+## groff
+include "~/.nano/groff.nanorc"
+
+# HAML
 include "~/.nano/haml.nanorc"
 
 ## Haskell
@@ -115,6 +154,12 @@ include "~/.nano/haskell.nanorc"
 
 ## HTML
 include "~/.nano/html.nanorc"
+
+## i3
+include "~/.nano/i3.nanorc"
+
+## ical
+include "~/.nano/ical.nanorc"
 
 ## ini configuration files
 include "~/.nano/ini.nanorc"
@@ -131,6 +176,15 @@ include "~/.nano/js.nanorc"
 
 ## JSON
 include "~/.nano/json.nanorc"
+
+## keymap
+include "~/.nano/keymap.nanorc"
+
+## kickstart
+include "~/.nano/kickstart.nanorc"
+
+## ledger
+include "~/.nano/ledger.nanorc"
 
 ## Lisp
 include "~/.nano/lisp.nanorc"
@@ -150,6 +204,9 @@ include "~/.nano/markdown.nanorc"
 ## mpd
 include "~/.nano/css.nanorc"
 
+## mutt
+include "~/.nano/mutt.nanorc"
+
 ## nanorc
 include "~/.nano/nanorc.nanorc"
 
@@ -162,6 +219,9 @@ include "~/.nano/ocaml.nanorc"
 ## Patch files
 include "~/.nano/patch.nanorc"
 
+## peg
+include "~/.nano/peg.nanorc"
+
 ## Perl
 include "~/.nano/perl.nanorc"
 include "~/.nano/perl6.nanorc"
@@ -173,11 +233,26 @@ include "~/.nano/php.nanorc"
 include "~/.nano/pkg-config.nanorc"
 include "~/.nano/pkgbuild.nanorc"
 
+## po
+include "~/.nano/po.nanorc"
+
+## pov
+include "~/.nano/pov.nanorc"
+
+## privoxy
+include "~/.nano/privoxy.nanorc"
+
 ## Puppet
 include "~/.nano/puppet.nanorc"
 
 ## Python
 include "~/.nano/python.nanorc"
+
+## reST
+include "~/.nano/reST.nanorc"
+
+## rpmspec
+include "~/.nano/rpmspec.nanorc"
 
 ## Ruby
 include "~/.nano/ruby.nanorc"
@@ -194,23 +269,35 @@ include "~/.nano/sed.nanorc"
 ## shell scripts
 include "~/.nano/sh.nanorc"
 
+## sls
+include "~/.nano/sls.nanorc"
+
 ## SQL
 include "~/.nano/sql.nanorc"
 
 ## Swift
 include "~/.nano/swift.nanorc"
 
+## systemd
+include "~/.nano/systemd.nanorc"
+
 ## tcl
 include "~/.nano/tcl.nanorc"
 
-## LaTeX
+## TeX
 include "~/.nano/tex.nanorc"
+
+## vala
+include "~/.nano/vala.nanorc"
 
 ## vim
 include "~/.nano/vi.nanorc"
 
 ## XML
 include "~/.nano/xml.nanorc"
+
+## xresources
+include "~/.nano/xresources.nanorc"
 
 ## YAML
 include "~/.nano/yaml.nanorc"
