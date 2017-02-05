@@ -97,6 +97,9 @@ include "~/.nano/clojure.nanorc"
 ## CMake
 include "~/.nano/cmake.nanorc"
 
+## Coffeescript
+include "~/.nano/coffeescript.nanorc"
+
 ## Colortest
 include "~/.nano/colortest.nanorc"
 
@@ -202,7 +205,7 @@ include "~/.nano/man.nanorc"
 include "~/.nano/markdown.nanorc"
 
 ## mpd
-include "~/.nano/css.nanorc"
+include "~/.nano/mpdconf.nanorc"
 
 ## mutt
 include "~/.nano/mutt.nanorc"
