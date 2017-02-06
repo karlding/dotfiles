@@ -1,0 +1,10 @@
+EditorConfig.EditorConfig
+PeterJausovec.vscode-docker
+chipcollier.Theme-OceanKit
+donjayamanne.python
+ms-vscode.cpptools
+ms-vscode.csharp
+ms-vscode.latex
+ms-vscode.sublime-keybindings
+rebornix.Ruby
+saviorisdead.RustyCode
