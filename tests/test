@@ -9,7 +9,11 @@ elif [ `get_os` == "ubuntu" ]; then
     ../install linux
 elif [ `get_os` == "windows" ]; then
     echo "Windows has no tests"
+
+    exit 1
 else
     echo "[ERROR]: Unknown OS"
     echo `get_os`
+
+    exit 1
 fi
