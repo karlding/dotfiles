@@ -1,4 +1,4 @@
-# [Karl](https://justkding.me)'s dotfiles
+# [Karl Ding](https://justkding.me)'s dotfiles
 
 [![Build Status](https://travis-ci.org/karlding/dotfiles.svg?branch=master)](https://travis-ci.org/karlding/dotfiles)
 
@@ -10,21 +10,6 @@ Clone the repository somewhere. The location doesn't really matter, since we wil
 ```bash
 git clone https://github.com/karlding/dotfiles.git
 ```
-
-You may also want to install bash-completion (which is a dependency that is used for the ``PS1`` prompt.
-
-```bash
-sudo apt-get install bash-completion
-```
-
-For OSX, simply install applications using ``brew``.
-
-```bash
-brew install git
-brew install bash-completion
-```
-
-``brew install git`` will install ``git`` and ``git-completion``, giving us the ``__git_ps1`` prompt.
 
 Then run
 
@@ -39,43 +24,44 @@ If you wish to install OS specifics, you can do
 ./install linux
 ```
 
-or for macos
+or for macOS
 
 ```bash
 ./install macos
 ```
 
-Unfortunately, I haven't had a chance to automate ``mklink``.
+### bash-completion
+You may also want to install bash-completion (which is a dependency that is used for the ``PS1`` prompt.
 
-### Symlinking
-If you prefer to do things the manual way
+#### Ubuntu
+```bash
+sudo apt-get install bash-completion
+```
 
-#### ConEmu
-Symlink the ``conemu.xml`` file to ``%APPDATA%\ConEmu.xml``.
+##### macOS
+```bash
+brew install git
+brew install bash-completion
+```
+
+## Windows
+Unfortunately, I haven't had a chance to automate ``mklink`` yet.
+
+### ConEmu
+Hard link the ``conemu.xml`` file to ``%APPDATA%\ConEmu.xml``.
 
 ```bash
 mklink /H "%APPDATA%\ConEmu.xml" "%DOTFILES_DIR%\os\windows\ConEmu\ConEmu.xml"
 ```
 
-#### Cygwin Environments
-I ran into a weird issue with Cygwin where it couldn't read my ``gitconfig`` symlink for some reason, but happily reads the other (Linux-style) symlinks. So I just ended up creating a hard link instead, which worked fine. It probably is a good idea to use hard links instead of ``ln -s`` on Windows.
-
-```bash
-mklink /H .gitconfig "%DOTFILES_DIR%\git\gitconfig"
-```
-
-#### Sublime Text 3
-Symlink the entire ``User`` folder to the Sublime Text app directory. On Windows, this is located at ``%appdata%\Sublime Text 3\Packages\User``.
+### Sublime Text 3
+Symlink the entire ``User`` folder to the Sublime Text app directory, at ``%appdata%\Sublime Text 3\Packages\User``.
 
 ```bash
 mklink /J "%appdata%\Sublime Text 3\Packages\User" "C:\dotfiles\location\subl\User"
 ```
 
-Notice that we're using the ``/J`` flag to hard link a directory, instead of the ``/H`` flag to hard link a file
-
-On Linux, the Sublime Text 3 configuration is located under ``~/.config/sublime-text-3/Packages/User``.
-
-#### Atom
+### Atom
 Symlink the ``atom`` directory to ``~/.atom`` (or create a hard junction ``%userprofile%\.atom`` on Windows).
 
 ```bash
@@ -96,10 +82,8 @@ cd ~/.atom
 apm list --installed --bare > package-list.txt
 ```
 
-#### Vim
-vim plugins are managed using Vundle.
-
-To setup on Windows (using Cygwin64), make sure you clone Vundle with Unix line endings. For some reason, Cygwin insists on checking out repositories with CRLF endings, which is a huge pain. We can get around this with the following:
+### Vim
+To setup on Windows (using Cygwin64), make sure you clone Vundle with Unix line endings.
 
 ```bash
 git config --global core.autocrlf false
@@ -119,7 +103,11 @@ Voila! Now install all your plugins using ``:PluginInstall``.
 
 **Note**: If you are using Cygwin, make sure you install the *Cygwin version of git* as well, or else plugin installation using Vundle will fail.
 
-#### git
+### git
+```bash
+mklink /H .gitconfig "%DOTFILES_DIR%\git\gitconfig"
+```
+
 You may want to set up a ``~/.gitconfig.local`` to prevent git from complaining whenever you try to commit. Add the following to your ``~/.gitconfig.local``, where ``Karl`` and ``karlding@users.noreply.github.com`` are your name and email.
 
 ```
@@ -157,10 +145,10 @@ brew install nmap
 brew install gpg
 brew install htop
 brew install nano
+brew install tree
 ```
 
-
-and then add these utils to your ``PATH`` (probably in ``.bash_exports.local``)
+And then add these utils to your ``PATH`` (probably in ``.bash_exports.local``)
 
 ```bash
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
