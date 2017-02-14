@@ -9,4 +9,4 @@ pager = LESS='FRX' less
 quiet = True
 
 # Allow local customizations
-%include ~/.hgrc_local
+%include ~/.hgrc.local
