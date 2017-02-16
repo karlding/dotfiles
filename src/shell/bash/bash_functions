@@ -62,5 +62,19 @@ function datauri() {
     fi
 }
 
+# ----------------------------------------------------------------------
+
+# turtles
+function turtle() {
+    local green='\033[1;32m'
+    local blue='\\033[1;34m'
+    local cyan='\033[1;36m'
+
+    echo -e " ${green} _"
+    echo -e " ${green}(${cyan}*${green}\\${blue}.-."
+    echo -e "  ${green}\\${blue}/___\\\\${green}_"
+    echo -e "   ${green}U   U"
+    echo -e "${cyan}"
+}
 
 [ -f ~/.bash_functions.local ] && source ~/.bash_functions.local
