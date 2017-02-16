@@ -5,6 +5,5 @@
     ],
     "editor.tabCompletion": true,
     "workbench.welcome.enabled": false,
-    "editor.wordWrap": true,
-    "vsicons.presets.hideFolders": false
+    "editor.wordWrap": true
 }

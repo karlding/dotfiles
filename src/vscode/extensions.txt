@@ -2,6 +2,8 @@ EditorConfig.EditorConfig
 PeterJausovec.vscode-docker
 chipcollier.Theme-OceanKit
 donjayamanne.python
+lukehoban.Go
+ms-vscode.PowerShell
 ms-vscode.cpptools
 ms-vscode.csharp
 ms-vscode.latex
