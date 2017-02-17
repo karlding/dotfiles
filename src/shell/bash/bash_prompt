@@ -1,11 +1,21 @@
 # Custom bash prompt
 #
 # Includes custom character for the prompt, path, and Git branch name.
+#
+# My bash prompt looks like this:
+#
+#  → hostname@pwd (git:branch) $ command
+#  ...command output...
+#
+#  → hostname@pwd (git:branch) $
+#
 
 PS1='\n\[$(tput setaf 5)\]'
-PS1+=' →  '
+PS1+=' → '
 PS1+='\[$(tput setaf 6)\]'
-PS1+='\w'                                       # Terminal title (set to the
+PS1+='\h'                                       # hostname
+PS1+='@'
+PS1+='\W'                                       # Terminal title (set to the
                                                 # current working directory)
 PS1+='\[$(tput setaf 3)\]'
 PS1+='$(__git_ps1 " (%s)")'                     # display git repository details
