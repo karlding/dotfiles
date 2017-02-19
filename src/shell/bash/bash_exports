@@ -56,4 +56,8 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# Add go
+export GOPATH="$HOME/go"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
 [ -f ~/.bash_exports.local ] && source ~/.bash_exports.local
