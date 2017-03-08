@@ -7,6 +7,9 @@
 
 *~
 
+# swap files
+*.swp
+
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
 
@@ -24,7 +27,9 @@
 # | OS X                                                               |
 # ----------------------------------------------------------------------
 
+# Thumbnails
 ._*
+
 .AppleDouble
 .DS_Store
 .localized
@@ -201,3 +206,21 @@ build/Release
 
 ### Vagrant ###
 .vagrant/
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Tags #
+# Tags created by etags, ctags, gtags (GNU global), cscope, etc.
+TAGS
+!TAGS/
+tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+cscope.files
+csope.out
+cscope.in.out
+cscope.po.out
