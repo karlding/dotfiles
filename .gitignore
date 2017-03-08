@@ -48,6 +48,8 @@ atom/storage
 # Weechat
 src/weechat/.weechat/certs
 src/weechat/.weechat/logs
+src/weechat/.weechat/alias.conf
+src/weechat/.weechat/irc.conf
 src/weechat/.weechat/script
 src/weechat/.weechat/sec.conf
 src/weechat/.weechat/weechat.log
