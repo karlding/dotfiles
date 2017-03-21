@@ -34,6 +34,7 @@
     ~/.hgrc: src/hg/hgrc
     ~/.ssh/config: src/ssh/config
     ~/.gemrc: src/ruby/gemrc
+    ~/.irbrc: src/ruby/irbrc
     ~/.weechat: src/weechat/.weechat
 
 - shell:

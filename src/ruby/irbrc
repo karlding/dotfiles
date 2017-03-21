@@ -1,0 +1,9 @@
+require "rubygems"
+
+# autocompletion
+require 'irb/completion'
+
+# pretty print
+require 'pp'
+
+IRB.conf[:AUTO_INDENT]=true
