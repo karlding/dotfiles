@@ -2,6 +2,7 @@ EditorConfig.EditorConfig
 PeterJausovec.vscode-docker
 chipcollier.Theme-OceanKit
 donjayamanne.python
+formulahendry.auto-close-tag
 lukehoban.Go
 ms-vscode.PowerShell
 ms-vscode.cpptools
