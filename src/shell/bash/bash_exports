@@ -60,4 +60,9 @@ export NVM_DIR="$HOME/.nvm"
 export GOPATH="$HOME/go"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
+# VTE
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+
 [ -f ~/.bash_exports.local ] && source ~/.bash_exports.local
