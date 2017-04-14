@@ -61,6 +61,19 @@ Symlink the entire ``User`` folder to the Sublime Text app directory, at ``%appd
 mklink /J "%appdata%\Sublime Text 3\Packages\User" "C:\dotfiles\location\subl\User"
 ```
 
+### python and pyenv
+```bash
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+```
+
+Now start development!
+
+```bash
+pyenv virtualenv 2.7.8 vectorize278
+source ~/.pyenv/versions/vectorize278/bin/activate
+```
+
 ### Atom
 Symlink the ``atom`` directory to ``~/.atom`` (or create a hard junction ``%userprofile%\.atom`` on Windows).
 
