@@ -1,0 +1,42 @@
+# case-insensitive searching
+--ignore-case
+
+# directory ignores
+--ignore-dir=.git
+--ignore-dir=.svn
+--ignore-dir=.idea
+--ignore-dir=bower_components/
+--ignore-dir=gems
+--ignore-dir=node_modules/
+--ignore-dir=tmp
+--ignore-dir=.tox
+--ignore-dir=vendor/bundle/
+
+# sort results by filename
+--sort-files
+
+# add filetypes that ack normally ignores
+--type-set=coffee:ext:coffee
+--type-set=csv:ext:csv,tsv
+--type-set=cucumber:ext:feature
+--type-set=emblem:ext:emblem
+--type-set=javascript:ext:json
+--type-set=markdown:ext:markdown,md,mdown
+--type-set=mustache:ext:mustache,mu,handlebars,hbs,hbars
+--type-add=ruby:ext:haml,rake,rsel,builder
+--type-set=sass:ext:sass,scss
+
+# always use color
+--color
+
+# always show header
+--group
+
+# print 1 line of context around
+--context=1
+
+# follow symlinks
+--follow
+
+# flush output immediately
+--flush
