@@ -90,7 +90,6 @@
 		"dist",
 		"log",
 		"node_modules",
-		"pkg",
 		"tmp",
 		".zeus.sock",
 		"CVS"
