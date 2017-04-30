@@ -8,6 +8,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.ackrc: src/ack/ackrc
     ~/.bash_aliases: src/shell/bash/bash_aliases
     ~/.bash_exports: src/shell/bash/bash_exports
     ~/.bash_functions: src/shell/bash/bash_functions
