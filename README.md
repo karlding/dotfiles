@@ -95,6 +95,23 @@ cd ~/.atom
 apm list --installed --bare > package-list.txt
 ```
 
+### vscode
+```bash
+cat extensions.txt | map code --install-extension
+```
+
+Or if you don't have `map` aliased
+
+```bash
+cat extensions.txt | xargs -n1 code --install-extension
+```
+
+To backup
+
+```bash
+code --list-extensions > extensions.txt
+```
+
 ### Vim
 To setup on Windows (using Cygwin64), make sure you clone Vundle with Unix line endings.
 
