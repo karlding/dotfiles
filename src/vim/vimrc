@@ -1,42 +1,34 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins (Vundle)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use vim-plug to manage dependencies, stored to ~/.vim/plugged
+
 call plug#begin('~/.vim/plugged')
-
-" let Vundle manage Vundle, required
-Plug 'VundleVim/Vundle.vim'
-
-
-" vim-markdown
-" https://github.com/plasticboy/vim-markdown
-Plug 'plasticboy/vim-markdown'
-
-
-" tabular
-" https://github.com/godlygeek/tabular
-Plug 'godlygeek/tabular'
-
-
-" rails-vim
-" https://github.com/tpope/vim-rails
-Plug 'tpope/vim-rails'
-
-
-" vim-coffee-script
-" https://github.com/kchmck/vim-coffee-script
-Plug 'kchmck/vim-coffee-script'
-
-
-" vim-go
-" https://github.com/fatih/vim-go
-Plug 'fatih/vim-go'
+  " vim-markdown
+  Plug 'https://github.com/plasticboy/vim-markdown.git'
+  " tabular
+  Plug 'https://github.com/godlygeek/tabular.git'
+  " vim-rails
+  Plug 'https://github.com/tpope/vim-rails.git'
+  " vim-coffee-script
+  Plug 'https://github.com/kchmck/vim-coffee-script.git'
+  " vim-go
+  Plug 'https://github.com/fatih/vim-go.git', { 'for': 'go', 'do': ':GoInstallBinaries' }
+  " syntastic
+  Plug 'https://github.com/scrooloose/syntastic.git'
+  " vim-gitgutter
+  Plug 'https://github.com/airblade/vim-gitgutter.git'
+  " editorconfig-vim
+  Plug 'https://github.com/editorconfig/editorconfig-vim.git'
+  " neocomplete
+  Plug 'https://github.com/shougo/neocomplete.vim.git'
+  " neoinclude
+  Plug 'https://github.com/shougo/neoinclude.vim.git'
+  " All Plugins must be added before the following line
+call plug#end()              " required
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -44,32 +36,6 @@ let g:go_highlight_structs = 1
 let g:go_highlight_build_constraints = 1
 autocmd FileType go set number fo+=croq tw=100
 autocmd Filetype go set makeprg=go\ build\ .
-
-
-" syntastic
-" https://github.com/scrooloose/syntastic
-Plug 'scrooloose/syntastic'
-
-
-" Vim gutter
-" https://github.com/airblade/vim-gitgutter
-Plug 'airblade/vim-gitgutter'
-
-
-" EditorConfig
-" https://github.com/editorconfig/editorconfig-vim
-Plug 'editorconfig/editorconfig-vim'
-
-
-" neocomplete
-" https://github.com/shougo/neocomplete.vim
-Plug 'shougo/neocomplete.vim'
-
-
-" neoinclude
-" https://github.com/shougo/neoinclude.vim
-Plug 'shougo/neoinclude.vim'
-
 
 
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -110,8 +76,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 
-" All of your Plugins must be added before the following line
-call plug#end()              " required
 filetype plugin indent on    " required
 
 
