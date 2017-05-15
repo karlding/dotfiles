@@ -7,8 +7,6 @@ filetype off                  " required
 " Use vim-plug to manage dependencies, stored to ~/.vim/plugged
 
 call plug#begin('~/.vim/plugged')
-  " editorconfig-vim
-  Plug 'https://github.com/editorconfig/editorconfig-vim.git'
   " neocomplete
   Plug 'https://github.com/shougo/neocomplete.vim.git'
   " neoinclude
@@ -25,6 +23,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/rhysd/vim-clang-format.git', { 'for': ['c', 'cpp', 'proto'] }
   " vim-coffee-script
   Plug 'https://github.com/kchmck/vim-coffee-script.git', { 'for': ['coffee'] }
+  " vim-editorconfig
+  Plug 'https://github.com/sgur/vim-editorconfig.git'
   " vim-go
   Plug 'https://github.com/fatih/vim-go.git', { 'for': ['go'], 'do': ':GoInstallBinaries' }
   " vim-gitgutter
