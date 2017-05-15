@@ -113,14 +113,11 @@ code --list-extensions > extensions.txt
 ```
 
 ### Vim
-To setup on Windows (using Cygwin64), make sure you clone Vundle with Unix line endings.
+Clone [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```bash
-git config --global core.autocrlf false
-git config --global core.safecrlf true
-git config --global core.eol lf
-
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 If you get errors about the directory already existing, just ``cd`` into the correct directory and then clone there. Then hard link your ``.vim`` from ``dotfiles`` to your home directory (for me, ``/home`` is ``C:\cygwin64\home\myusername``) using a junction.
@@ -129,9 +126,7 @@ If you get errors about the directory already existing, just ``cd`` into the cor
 mklink /J C:\cygwin64\home\myusername\.vim C:\%DOTFILES_DIR%\vim\.vim
 ```
 
-Voila! Now install all your plugins using ``:PluginInstall``.
-
-**Note**: If you are using Cygwin, make sure you install the *Cygwin version of git* as well, or else plugin installation using Vundle will fail.
+Voila! Now install all your plugins using ``:PlugInstall``.
 
 ### git
 ```bash
@@ -176,6 +171,12 @@ brew install gpg
 brew install htop
 brew install nano
 brew install tree
+```
+
+Alternatively, you can do
+
+```bash
+brew bundle
 ```
 
 And then add these utils to your ``PATH`` (probably in ``.bash_exports.local``)
