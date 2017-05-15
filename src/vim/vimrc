@@ -34,6 +34,18 @@ Plugin 'tpope/vim-rails'
 Plugin 'kchmck/vim-coffee-script'
 
 
+" vim-go
+" https://github.com/fatih/vim-go
+Plugin 'fatih/vim-go'
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_build_constraints = 1
+autocmd FileType go set number fo+=croq tw=100
+autocmd Filetype go set makeprg=go\ build\ .
+
+
 " syntastic
 " https://github.com/scrooloose/syntastic
 Plugin 'scrooloose/syntastic'
