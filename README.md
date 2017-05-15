@@ -113,14 +113,8 @@ code --list-extensions > extensions.txt
 ```
 
 ### Vim
-Clone [vim-plug](https://github.com/junegunn/vim-plug)
 
-```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-If you get errors about the directory already existing, just ``cd`` into the correct directory and then clone there. Then hard link your ``.vim`` from ``dotfiles`` to your home directory (for me, ``/home`` is ``C:\cygwin64\home\myusername``) using a junction.
+Hard link your ``.vim`` from ``dotfiles`` to your home directory (for me, ``/home`` is ``C:\cygwin64\home\myusername``) using a junction.
 
 ```bash
 mklink /J C:\cygwin64\home\myusername\.vim C:\%DOTFILES_DIR%\vim\.vim
