@@ -8,35 +8,35 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 
 " vim-markdown
 " https://github.com/plasticboy/vim-markdown
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 
 
 " tabular
 " https://github.com/godlygeek/tabular
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 
 " rails-vim
 " https://github.com/tpope/vim-rails
-Plugin 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 
 
 " vim-coffee-script
 " https://github.com/kchmck/vim-coffee-script
-Plugin 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 
 
 " vim-go
 " https://github.com/fatih/vim-go
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -48,27 +48,28 @@ autocmd Filetype go set makeprg=go\ build\ .
 
 " syntastic
 " https://github.com/scrooloose/syntastic
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 
 " Vim gutter
 " https://github.com/airblade/vim-gitgutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 
 " EditorConfig
 " https://github.com/editorconfig/editorconfig-vim
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 
 " neocomplete
 " https://github.com/shougo/neocomplete.vim
-Plugin 'shougo/neocomplete.vim'
+Plug 'shougo/neocomplete.vim'
 
 
 " neoinclude
 " https://github.com/shougo/neoinclude.vim
-Plugin 'shougo/neoinclude.vim'
+Plug 'shougo/neoinclude.vim'
+
 
 
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -110,7 +111,7 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()              " required
 filetype plugin indent on    " required
 
 
