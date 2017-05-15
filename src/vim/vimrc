@@ -29,8 +29,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/fatih/vim-go.git', { 'for': ['go'], 'do': ':GoInstallBinaries' }
   " vim-gitgutter
   Plug 'https://github.com/airblade/vim-gitgutter.git'
-  " vim-markdown
-  Plug 'https://github.com/plasticboy/vim-markdown.git'
   " vim-ruby
   Plug 'https://github.com/vim-ruby/vim-ruby.git', { 'for': ['ruby'] }
 
