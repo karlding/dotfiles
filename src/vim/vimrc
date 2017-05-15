@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
   " rust-vim
   Plug 'https://github.com/rust-lang/rust.vim.git', { 'for': 'rust' }
   " syntastic
-  Plug 'https://github.com/scrooloose/syntastic.git'
+  Plug 'https://github.com/scrooloose/syntastic.git', { 'on': 'SyntasticCheck' }
   " tabular
   Plug 'https://github.com/godlygeek/tabular.git'
   " vim-clang-format
