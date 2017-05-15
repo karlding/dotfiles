@@ -7,42 +7,57 @@ filetype off                  " required
 " Use vim-plug to manage dependencies, stored to ~/.vim/plugged
 
 call plug#begin('~/.vim/plugged')
-  " vim-markdown
-  Plug 'https://github.com/plasticboy/vim-markdown.git'
-  " tabular
-  Plug 'https://github.com/godlygeek/tabular.git'
-  " vim-rails
-  Plug 'https://github.com/tpope/vim-rails.git'
-  " vim-coffee-script
-  Plug 'https://github.com/kchmck/vim-coffee-script.git'
-  " vim-go
-  Plug 'https://github.com/fatih/vim-go.git', { 'for': 'go', 'do': ':GoInstallBinaries' }
-  " syntastic
-  Plug 'https://github.com/scrooloose/syntastic.git'
-  " vim-gitgutter
-  Plug 'https://github.com/airblade/vim-gitgutter.git'
   " editorconfig-vim
   Plug 'https://github.com/editorconfig/editorconfig-vim.git'
   " neocomplete
   Plug 'https://github.com/shougo/neocomplete.vim.git'
   " neoinclude
   Plug 'https://github.com/shougo/neoinclude.vim.git'
+  " NERDTree
+  Plug 'https://github.com/scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  " rust-vim
+  Plug 'https://github.com/rust-lang/rust.vim.git', { 'for': 'rust' }
+  " syntastic
+  Plug 'https://github.com/scrooloose/syntastic.git'
+  " tabular
+  Plug 'https://github.com/godlygeek/tabular.git'
+  " vim-clang-format
+  Plug 'https://github.com/rhysd/vim-clang-format.git', { 'for': ['c', 'cpp', 'proto'] }
+  " vim-coffee-script
+  Plug 'https://github.com/kchmck/vim-coffee-script.git'
+  " vim-go
+  Plug 'https://github.com/fatih/vim-go.git', { 'for': ['go'], 'do': ':GoInstallBinaries' }
+  " vim-gitgutter
+  Plug 'https://github.com/airblade/vim-gitgutter.git'
+  " vim-markdown
+  Plug 'https://github.com/plasticboy/vim-markdown.git'
+  " vim-ruby
+  Plug 'https://github.com/vim-ruby/vim-ruby.git', { 'for': ['ruby'] }
+
   " All Plugins must be added before the following line
 call plug#end()              " required
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin: vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_build_constraints = 1
+
 autocmd FileType go set number fo+=croq tw=100
 autocmd Filetype go set makeprg=go\ build\ .
 
 
-"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-"" Disable AutoComplPop.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin: neocomplete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
-" Use neocomplete.
+" Use neocomplete
 let g:neocomplete#enable_at_startup = 1
 " use smartcase
 let g:neocomplete#enable_smart_case = 1
@@ -150,6 +165,9 @@ if has('mouse')
   set mouse=a
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Searching
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ignore case when searching
 set ignorecase
 
@@ -162,11 +180,12 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
 " For regular expressions turn magic on
 set magic
+
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
 
 " Show matching brackets when text indicator is over them
 set showmatch
