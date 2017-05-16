@@ -7,6 +7,8 @@ filetype off                  " required
 " Use vim-plug to manage dependencies, stored to ~/.vim/plugged
 
 call plug#begin('~/.vim/plugged')
+  " jade
+  Plug 'https://github.com/vim-scripts/jade.vim',   { 'for': 'jade' }
   " neocomplete
   Plug 'https://github.com/shougo/neocomplete.vim.git'
   " neoinclude
