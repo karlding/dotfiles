@@ -25,6 +25,7 @@
     ~/.nanorc: src/nano/nanorc
     ~/.psqlrc: src/psql/psqlrc
     ~/.psqlrc.local: src/psql/psqlrc.local
+    ~/.pythonrc: src/python/pythonrc
     ~/.sqliterc: src/sqlite/sqliterc
     ~/.tmux.conf: src/tmux/tmux.conf
     ~/.vim: src/vim/.vim
