@@ -14,6 +14,7 @@ alias ll='ls -lGha'
 alias mv='mv -v'
 alias rm='rm -v'
 alias cp='cp -v'
+alias ln='ln -v'
 alias less='less -r'
 alias map='xargs -n1'
 
