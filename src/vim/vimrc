@@ -25,6 +25,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/kchmck/vim-coffee-script.git', { 'for': ['coffee'] }
   " vim-editorconfig
   Plug 'https://github.com/sgur/vim-editorconfig.git'
+  " vim-elixir
+  Plug 'https://github.com/elixir-lang/vim-elixir.git', { 'for': ['elixir'] }
   " vim-go
   Plug 'https://github.com/fatih/vim-go.git', { 'for': ['go'], 'do': ':GoInstallBinaries' }
   " vim-gitgutter
