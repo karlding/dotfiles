@@ -2,19 +2,12 @@
 
 [![Build Status](https://travis-ci.org/karlding/dotfiles.svg?branch=master)](https://travis-ci.org/karlding/dotfiles)
 
-[Karl](https://justkding.me) attempts to do dotfiles. These are my dotfiles I am using for my laptop's current setup.
+[Karl](https://justkding.me) attempts to do dotfiles. These are my dotfiles I've been using for my personal laptop (and recently, work laptops/computers). The goal is to have a unified collection of dotfiles and configuration files to minimize time spent configuring new machines.
 
 ## Setup
-Clone the repository somewhere. The location doesn't really matter, since we will be symlinking the dotfiles anyways. ``.local`` versions of the files will be sourced after.
 
 ```bash
-git clone https://github.com/karlding/dotfiles.git
-```
-
-Then run
-
-```bash
-cd dotfiles
+git clone https://github.com/karlding/dotfiles.git && cd dotfiles
 ./install
 ```
 
@@ -28,6 +21,12 @@ or for macOS
 
 ```bash
 ./install macos
+```
+
+If you're on a Mac, you may want to do
+
+```bash
+brew bundle
 ```
 
 ### bash-completion
@@ -96,11 +95,6 @@ apm list --installed --bare > package-list.txt
 ```
 
 ### vscode
-```bash
-cat extensions.txt | map code --install-extension
-```
-
-Or if you don't have `map` aliased
 
 ```bash
 cat extensions.txt | xargs -n1 code --install-extension
