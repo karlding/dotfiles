@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/scrooloose/syntastic.git', { 'on': 'SyntasticCheck' }
   " tabular
   Plug 'https://github.com/godlygeek/tabular.git'
+  " undotree
+  Plug 'https://github.com/mbbill/undotree.git'
   " vim-clang-format
   Plug 'https://github.com/rhysd/vim-clang-format.git', { 'for': ['c', 'cpp', 'proto'] }
   " vim-coffee-script
@@ -238,6 +240,14 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
+
+" undotree
+if !isdirectory(expand("~/.vim/undo/"))
+  silent !mkdir -p ~/.vim/undo
+endif
+
+set undodir^=~/.vim/undo/                  " Directory to put undo files
+set undofile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
