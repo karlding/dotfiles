@@ -58,7 +58,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add go
 export GOPATH="$HOME/go"
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$GOPATH/bin:$PATH
 
 # VTE
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
