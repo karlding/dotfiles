@@ -129,6 +129,9 @@ brew 'make'
 # automake
 brew 'automake'
 
+# openssl
+brew 'openssl'
+
 
 # ----------------------------------------------------------------------
 # File compression/uncompression
