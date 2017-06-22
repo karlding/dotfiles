@@ -132,6 +132,11 @@ brew 'automake'
 # openssl
 brew 'openssl'
 
+# libyaml
+# must be after openssl
+brew 'libyaml'
+
+
 # ----------------------------------------------------------------------
 # Programming languages and package managers
 
