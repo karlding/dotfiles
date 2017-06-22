@@ -132,6 +132,12 @@ brew 'automake'
 # openssl
 brew 'openssl'
 
+# ----------------------------------------------------------------------
+# Programming languages and package managers
+
+# yarn
+brew 'yarn'
+
 
 # ----------------------------------------------------------------------
 # File compression/uncompression
