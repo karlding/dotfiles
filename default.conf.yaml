@@ -42,3 +42,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - chmod 0400 ~/.curlrc
+  - chmod 0400 ~/.wgetrc
