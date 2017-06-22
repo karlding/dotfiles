@@ -157,5 +157,8 @@ brew 'unrar'
 # ----------------------------------------------------------------------
 # Misc
 
+# clang-format
+brew 'clang-format'
+
 # tree
 brew 'tree'
