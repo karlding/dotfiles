@@ -37,6 +37,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/airblade/vim-gitgutter.git'
   " vim-ruby
   Plug 'https://github.com/vim-ruby/vim-ruby.git', { 'for': ['ruby'] }
+  " vim-tmux-navigator
+  Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
 
   " All Plugins must be added before the following line
 call plug#end()              " required
