@@ -16,7 +16,6 @@ servers = (
     autoconnect = "yes";
     use_ssl = "yes";
     ssl_verify = "yes";
-    ssl_capath = "/etc/ssl/certs";
     password = "{{ mozilla_irc_pw }}";
   },
   {
@@ -25,7 +24,6 @@ servers = (
     port = "7000";
     use_ssl = "yes";
     ssl_verify = "yes";
-    ssl_capath = "/etc/ssl/certs";
     autoconnect = "yes";
     password = "{{ freenode_irc_pw }}";
   }
