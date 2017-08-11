@@ -6,10 +6,5 @@
     "editor.tabCompletion": true,
     "workbench.welcome.enabled": false,
     "editor.wordWrap": true,
-    "[cpp]": {
-        "editor.quickSuggestions": false
-    },
-    "[c]": {
-        "editor.quickSuggestions": false
-    }
+    "window.zoomLevel": 0
 }
