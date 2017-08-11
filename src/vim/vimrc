@@ -1,3 +1,4 @@
+syntax on
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -7,8 +8,14 @@ filetype off                  " required
 " Use vim-plug to manage dependencies, stored to ~/.vim/plugged
 
 call plug#begin('~/.vim/plugged')
+  " syntax
   " jade
   Plug 'https://github.com/vim-scripts/jade.vim', { 'for': 'jade' }
+
+  " UI/UX
+  " vim-tmux-navigator
+  Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
+
   " neocomplete
   Plug 'https://github.com/shougo/neocomplete.vim.git'
   " neoinclude
