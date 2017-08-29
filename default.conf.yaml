@@ -38,6 +38,7 @@
     ~/.gemrc: src/ruby/gemrc
     ~/.irbrc: src/ruby/irbrc
     ~/.weechat: src/weechat/.weechat
+    ~/.minirc.dfl: src/minicom/minirc.dfl
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

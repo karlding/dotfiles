@@ -1,0 +1,5 @@
+########################################################################
+# Minicom configuration file - use "minicom -s" to change parameters.
+
+# Add CR after each LF
+pu addcarreturn    Yes
