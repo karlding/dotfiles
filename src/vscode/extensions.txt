@@ -1,13 +1,13 @@
 EditorConfig.EditorConfig
+James-Yu.latex-workshop
 PeterJausovec.vscode-docker
 chipcollier.Theme-OceanKit
 donjayamanne.python
 formulahendry.auto-close-tag
 lukehoban.Go
-ms-vscode.PowerShell
 ms-vscode.cpptools
 ms-vscode.csharp
-ms-vscode.latex
+ms-vscode.PowerShell
 ms-vscode.sublime-keybindings
 rebornix.Ruby
 saviorisdead.RustyCode
