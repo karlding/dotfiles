@@ -4,8 +4,7 @@
         120
     ],
     "editor.tabCompletion": true,
-    "workbench.welcome.enabled": false,
-    "editor.wordWrap": true,
+    "editor.wordWrap": "on",
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Base16 Dark Ocean"
   }
