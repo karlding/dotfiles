@@ -77,4 +77,12 @@ function turtle() {
     echo -e "${cyan}"
 }
 
+function elephant() {
+  echo -e "   ____"
+  echo -e "  /.   \__"
+  echo -e " /_  \\_/  \\"
+  echo -e "// \\  ___ |\\"
+  echo -e "    |_| |_|"
+}
+
 [ -f ~/.bash_functions.local ] && source ~/.bash_functions.local
