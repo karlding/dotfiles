@@ -77,9 +77,13 @@ function turtle() {
     echo -e "${cyan}"
 }
 
+# elephants
 function elephant() {
-  echo -e "   ____"
-  echo -e "  /.   \__"
+  local gray='\033[1;30m'
+  local white='\033[1;37m'
+
+  echo -e "   ${gray}____"
+  echo -e "  ${gray}/${white}.${gray}   \__"
   echo -e " /_  \\_/  \\"
   echo -e "// \\  ___ |\\"
   echo -e "    |_| |_|"
