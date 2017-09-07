@@ -34,23 +34,18 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/mbbill/undotree.git'
   " vim-clang-format
   Plug 'https://github.com/rhysd/vim-clang-format.git', { 'for': ['c', 'cpp', 'proto'] }
-  " vim-coffee-script
-  Plug 'https://github.com/kchmck/vim-coffee-script.git', { 'for': ['coffee'] }
   " vim-editorconfig
   Plug 'https://github.com/sgur/vim-editorconfig.git'
-  " vim-elixir
-  Plug 'https://github.com/elixir-lang/vim-elixir.git', { 'for': ['elixir'] }
-  " vim-go
-  Plug 'https://github.com/fatih/vim-go.git', { 'for': ['go'], 'do': ':GoInstallBinaries' }
-  " vim-gitgutter
-  Plug 'https://github.com/airblade/vim-gitgutter.git'
-  " vim-ruby
-  Plug 'https://github.com/vim-ruby/vim-ruby.git', { 'for': ['ruby'] }
-  " vim-tmux-navigator
-  Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
 
   " All Plugins must be added before the following line
 call plug#end()              " required
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin: vim-gitgutter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
