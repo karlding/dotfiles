@@ -11,6 +11,8 @@ call plug#begin('~/.vim/plugged')
   " syntax
   " jade
   Plug 'https://github.com/vim-scripts/jade.vim', { 'for': 'jade' }
+  " salt-vim
+  Plug 'https://github.com/saltstack/salt-vim.git', { 'for': 'sls' }
 
   " UI/UX
   " vim-gitgutter
