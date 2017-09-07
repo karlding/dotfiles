@@ -46,7 +46,9 @@ call plug#end()              " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin: vim-gitgutter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" disable realtime updates on "Stop typing" event
 let g:gitgutter_realtime = 0
+" disable eager updates
 let g:gitgutter_eager = 0
 
 
