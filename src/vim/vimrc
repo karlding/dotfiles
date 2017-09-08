@@ -25,7 +25,7 @@ call plug#begin('~/.vim/plugged')
   " neoinclude
   Plug 'https://github.com/shougo/neoinclude.vim.git'
   " NERDTree
-  Plug 'https://github.com/scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'https://github.com/scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
   " rust-vim
   Plug 'https://github.com/rust-lang/rust.vim.git', { 'for': 'rust' }
   " syntastic
