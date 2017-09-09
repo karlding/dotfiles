@@ -437,9 +437,13 @@ map <leader>p :cp<cr>
 map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
+" next spelling error
 map <leader>sn ]s
+" previous spelling error
 map <leader>sp [s
+" add word to spelling dictionary
 map <leader>sa zg
+" view spelling correction suggestions
 map <leader>s? z=
 
 
