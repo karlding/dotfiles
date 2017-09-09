@@ -13,6 +13,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/vim-scripts/jade.vim', { 'for': 'jade' }
   " salt-vim
   Plug 'https://github.com/saltstack/salt-vim.git', { 'for': 'sls' }
+  " vim-elixir
+  Plug 'https://github.com/elixir-lang/vim-elixir.git', { 'for': ['elixir'] }
 
   " UI/UX
   " vim-gitgutter
