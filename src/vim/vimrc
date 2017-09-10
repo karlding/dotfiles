@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
   " rust-vim
   Plug 'https://github.com/rust-lang/rust.vim.git', { 'for': 'rust' }
   " syntastic
-  Plug 'https://github.com/scrooloose/syntastic.git', { 'on': 'SyntasticCheck' }
+  Plug 'https://github.com/vim-syntastic/syntastic.git', { 'on': 'SyntasticCheck' }
   " tabular
   Plug 'https://github.com/godlygeek/tabular.git'
   " undotree
@@ -102,7 +102,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " key-mappings
 inoremap <expr><C-g>    neocomplete#undo_completion()
 inoremap <expr><C-l>    neocomplete#complete_common_string()
-" <CR>: close popup and save indent
+" <CR>: close pop-up and save indent
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
     return neocomplete#close_popup() . "\<CR>"
@@ -131,7 +131,7 @@ filetype plugin indent on    " required
 " Sets how many lines of history VIM has to remember
 set history=500
 
-" Enable filetype plugins
+" Enable file-type plugins
 filetype plugin on
 filetype indent on
 
@@ -378,7 +378,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
+" Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
@@ -467,7 +467,7 @@ map <leader>pp :setlocal paste!<cr>
 set shortmess+=I
 
 " Remap keys
-" F1 for help; :help is generally more useful for the experienced user
+" <F1> for help; :help is generally more useful for the experienced user
 nnoremap <F1> <nop>
 
 
