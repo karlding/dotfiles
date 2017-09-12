@@ -9,7 +9,7 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
   " syntax
   " jade
-  Plug 'https://github.com/vim-scripts/jade.vim', { 'for': 'jade' }
+  Plug 'https://github.com/vim-scripts/jade.vim', { 'for': 'jade', 'tag': '1.1' }
   " salt-vim
   Plug 'https://github.com/saltstack/salt-vim.git', { 'for': 'sls' }
   " vim-elixir
@@ -19,22 +19,22 @@ call plug#begin('~/.vim/plugged')
   " vim-gitgutter
   Plug 'https://github.com/airblade/vim-gitgutter.git'
   " vim-tmux-navigator
-  Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
+  Plug 'https://github.com/christoomey/vim-tmux-navigator.git', { 'tag': 'v1.0' }
 
   " neocomplete
   Plug 'https://github.com/shougo/neocomplete.vim.git'
   " neoinclude
   Plug 'https://github.com/shougo/neoinclude.vim.git'
   " NERDTree
-  Plug 'https://github.com/scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+  Plug 'https://github.com/scrooloose/nerdtree', { 'on': 'NERDTreeToggle' , 'tag': '5.0.0' }
   " rust-vim
   Plug 'https://github.com/rust-lang/rust.vim.git', { 'for': 'rust' }
   " syntastic
-  Plug 'https://github.com/vim-syntastic/syntastic.git', { 'on': 'SyntasticCheck' }
+  Plug 'https://github.com/vim-syntastic/syntastic.git', { 'on': 'SyntasticCheck', 'tag': '3.8.0' }
   " tabular
-  Plug 'https://github.com/godlygeek/tabular.git'
+  Plug 'https://github.com/godlygeek/tabular.git', { 'tag': '1.0.0' }
   " undotree
-  Plug 'https://github.com/mbbill/undotree.git'
+  Plug 'https://github.com/mbbill/undotree.git', { 'tag': 'rel_5.0' }
   " vim-clang-format
   Plug 'https://github.com/rhysd/vim-clang-format.git', { 'for': ['c', 'cpp', 'proto'] }
   " vim-editorconfig
