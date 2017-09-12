@@ -18,6 +18,7 @@ src/vim/.vim/viminfo
 src/vim/.vim/swaps
 src/vim/.vim/undo
 src/vim/.vim/backups
+*.spl
 
 # Vundle
 src/vim/.vim/bundle
