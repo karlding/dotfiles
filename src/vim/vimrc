@@ -46,8 +46,6 @@ call plug#begin('~/.vim/plugged')
   " All Plugins must be added before the following line
 call plug#end()              " required
 
-" turn on syntax highlighting
-syntax on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin: vim-gitgutter
@@ -142,7 +140,7 @@ filetype indent on
 set autoread
 
 " With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
+" map <leader> to ,
 let mapleader = ","
 let g:mapleader = ","
 
@@ -207,11 +205,14 @@ set smartcase
 " Highlight search results
 set hlsearch
 
-" Makes search act like search in modern browsers
+" Dynamic highlighting
 set incsearch
 
 " For regular expressions turn magic on
 set magic
+
+" Default global search flag
+set gdefault
 
 
 " Don't redraw while executing macros (good performance config)
@@ -219,6 +220,7 @@ set lazyredraw
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
