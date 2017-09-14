@@ -62,6 +62,10 @@
     # Detect copies as well as renames
     renames = copies
 
+    # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
+    # instead of a/b/c/d as prefixes for diffs
+    mnemonicprefix = true
+
     # Use patience diff by default
     algorithm = patience
 
