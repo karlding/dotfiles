@@ -14,6 +14,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'https://github.com/saltstack/salt-vim.git', { 'for': 'sls' }
   " vim-elixir
   Plug 'https://github.com/elixir-lang/vim-elixir.git', { 'for': ['elixir'] }
+  " vim-toml
+  Plug 'https://github.com/cespare/vim-toml.git', { 'for': 'toml' }
+
 
   " UI/UX
   " vim-gitgutter
