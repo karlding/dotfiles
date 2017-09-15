@@ -1,117 +1,130 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use vim-plug to manage dependencies, stored to ~/.vim/plugged
-
+" Plugins {{{
+" Define bundles via GitHub repositories
 call plug#begin('~/.vim/plugged')
-  " syntax
-  " jade
-  Plug 'https://github.com/vim-scripts/jade.vim', { 'for': 'jade', 'tag': '1.1' }
-  " salt-vim
-  Plug 'https://github.com/saltstack/salt-vim.git', { 'for': 'sls' }
-  " vim-elixir
-  Plug 'https://github.com/elixir-lang/vim-elixir.git', { 'for': ['elixir'] }
-  " vim-toml
-  Plug 'https://github.com/cespare/vim-toml.git', { 'for': 'toml' }
+  " General {{{
+    Plug 'sgur/vim-editorconfig'
+  " }}}
+
+  " Syntax {{{
+    Plug 'vim-scripts/jade.vim', { 'for': ['jade'], 'tag': '1.1' }
+    Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
+    Plug 'saltstack/salt-vim', { 'for': ['sls'] }
+    Plug 'elixir-lang/vim-elixir', { 'for': ['elixir'] }
+    Plug 'fatih/vim-go', { 'for': ['go'], 'tag': 'v1.14' , 'do': ':GoInstallBinaries' }
+    Plug 'cespare/vim-toml', { 'for': ['toml'] }
+    Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'], 'tag': 'stable-20160928' }
+  " }}}
+
+  " UI/UX {{{
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' , 'tag': '5.0.0' }
+    Plug 'airblade/vim-gitgutter'
+    Plug 'christoomey/vim-tmux-navigator', { 'tag': 'v1.0' }
+  " }}}
+
+  " Miscellaneous {{{
+    Plug 'shougo/neocomplete.vim'
+    Plug 'shougo/neoinclude.vim'
+    Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck', 'tag': '3.8.0' }
+    Plug 'godlygeek/tabular', { 'tag': '1.0.0' }
+    Plug 'mbbill/undotree', { 'tag': 'rel_5.0' }
+    Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp', 'proto'] }
+  " }}}
+call plug#end()
+" }}}
 
 
-  " UI/UX
-  " vim-gitgutter
-  Plug 'https://github.com/airblade/vim-gitgutter.git'
-  " vim-tmux-navigator
-  Plug 'https://github.com/christoomey/vim-tmux-navigator.git', { 'tag': 'v1.0' }
+" Plugin Configuration {{{
+  " Plugin: vim-gitgutter {{{
+    " disable realtime updates on "Stop typing" event
+    let g:gitgutter_realtime = 0
+    " disable eager updates
+    let g:gitgutter_eager = 0
+  " }}}
 
-  " neocomplete
-  Plug 'https://github.com/shougo/neocomplete.vim.git'
-  " neoinclude
-  Plug 'https://github.com/shougo/neoinclude.vim.git'
-  " NERDTree
-  Plug 'https://github.com/scrooloose/nerdtree', { 'on': 'NERDTreeToggle' , 'tag': '5.0.0' }
-  " rust-vim
-  Plug 'https://github.com/rust-lang/rust.vim.git', { 'for': 'rust' }
-  " syntastic
-  Plug 'https://github.com/vim-syntastic/syntastic.git', { 'on': 'SyntasticCheck', 'tag': '3.8.0' }
-  " tabular
-  Plug 'https://github.com/godlygeek/tabular.git', { 'tag': '1.0.0' }
-  " undotree
-  Plug 'https://github.com/mbbill/undotree.git', { 'tag': 'rel_5.0' }
-  " vim-clang-format
-  Plug 'https://github.com/rhysd/vim-clang-format.git', { 'for': ['c', 'cpp', 'proto'] }
-  " vim-editorconfig
-  Plug 'https://github.com/sgur/vim-editorconfig.git'
+  " Plugin: vim-go {{{
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
+    let g:go_highlight_structs = 1
+    let g:go_highlight_interfaces = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_build_constraints = 1
 
-  " All Plugins must be added before the following line
-call plug#end()              " required
+    autocmd FileType go set number fo+=croq tw=100
+    autocmd Filetype go set makeprg=go\ build\ .
+  " }}}
 
+  " Plugin: neocomplete {{{
+    " Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+    " Disable AutoComplPop.
+    let g:acp_enableAtStartup = 0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin: vim-gitgutter
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" disable realtime updates on "Stop typing" event
-let g:gitgutter_realtime = 0
-" disable eager updates
-let g:gitgutter_eager = 0
+    " Use neocomplete
+    let g:neocomplete#enable_at_startup = 1
+    " use camel case
+    let g:neocomplete#enable_camel_case = 1
+    " use smartcase
+    let g:neocomplete#enable_smart_case = 1
 
+    " Default # of completions is 100, that's crazy.
+    let g:neocomplete#max_list = 5
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin: vim-go
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+    " Set minimum syntax keyword length
+    let g:neocomplete#auto_completion_start_length = 3
 
-autocmd FileType go set number fo+=croq tw=100
-autocmd Filetype go set makeprg=go\ build\ .
+    " This makes sure we use neocomplete completefunc instead of
+    " the one in rails.vim, otherwise this plugin will crap out.
+    let g:neocomplete#force_overwrite_completefunc = 1
 
+    " Define keyword.
+    if !exists('g:neocomplete#keyword_patterns')
+      let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin: neocomplete
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+    " key-mappings
+    inoremap <expr><C-g>    neocomplete#undo_completion()
+    inoremap <expr><C-l>    neocomplete#complete_common_string()
+    " <CR>: close pop-up and save indent
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+        return neocomplete#close_popup() . "\<CR>"
+        " For no inserting <CR> key
+        return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    endfunction
+    " <TAB>: completion
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " }}}
 
-" Use neocomplete
-let g:neocomplete#enable_at_startup = 1
-" use camel case
-let g:neocomplete#enable_camel_case = 1
-" use smartcase
-let g:neocomplete#enable_smart_case = 1
+  " Plugin: ag.vim {{{
+    " When you press gv you Ag after the selected text
+    vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
-" Default # of completions is 100, that's crazy.
-let g:neocomplete#max_list = 5
+    " Open Ag and put the cursor in the right position
+    map <leader>g :Ag
 
-" Set minimum syntax keyword length
-let g:neocomplete#auto_completion_start_length = 3
+    " When you press <leader>r you can search and replace the selected text
+    vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-" This makes sure we use neocomplete completefunc instead of
-" the one in rails.vim, otherwise this plugin will crap out.
-let g:neocomplete#force_overwrite_completefunc = 1
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" key-mappings
-inoremap <expr><C-g>    neocomplete#undo_completion()
-inoremap <expr><C-l>    neocomplete#complete_common_string()
-" <CR>: close pop-up and save indent
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return neocomplete#close_popup() . "\<CR>"
-    " For no inserting <CR> key
-    return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    " Do :help cope if you are unsure what cope is. It's super useful!
+    "
+    " When you search with Ag, display your results in cope by doing:
+    "   <leader>cc
+    "
+    " To go to the next search result do:
+    "   <leader>n
+    "
+    " To go to the previous search results do:
+    "   <leader>p
+    "
+    map <leader>cc :botright cope<cr>
+    map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+    map <leader>n :cn<cr>
+    map <leader>p :cp<cr>
+  " }}}
+" }}}
 
 " Enable omni completion
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -132,25 +145,37 @@ filetype plugin indent on    " required
 " Sets how many lines of history VIM has to remember
 set history=500
 
-" Enable file-type plugins
-filetype plugin on
-filetype indent on
+" Spacing {{{
+  " Enable file-type plugins
+  filetype plugin on
+  filetype indent on
+" }}}
 
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" With a map leader it's possible to do extra key combinations
-" map <leader> to ,
-let mapleader = ","
-let g:mapleader = ","
-
-" Fast saving
-nmap <leader>w :w!<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
+
+" Autocomplete {{{
+  set wildmenu                                " Turn on the WiLd menu
+  set wildmode=list:full
+
+  " Compiled object files
+  set wildignore=*.o,*.obj,*.exe,*.dll,*~,*.pyc
+  " Version Control
+  if has("win16") || has("win32")
+      set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+  else
+      set wildignore+=.git\*,.hg\*,.svn\*
+  endif
+  " LaTeX intermediate files
+  set wildignore+=*.aux,*.out,*.toc
+  " Images
+  set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
+  " Compiled spelling lists
+  set wildignore+=*.spl
+" }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -164,19 +189,6 @@ set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-" Turn on the WiLd menu
-set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-else
-    set wildignore+=.git\*,.hg\*,.svn\*
-endif
-
-"Always show current position
-set ruler
 
 " Height of the command bar
 set cmdheight=2
@@ -186,40 +198,46 @@ set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
+
 set whichwrap+=<,>,h,l
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Searching
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ignore case when searching
-set ignorecase
+" Search {{{
+  " Ignore case when searching
+  set ignorecase
 
-" When searching try to be smart about cases
-set smartcase
+  " Dynamic highlighting
+  set incsearch
 
-" Highlight search results
-set hlsearch
+  " Default global search flag
+  set gdefault
 
-" Dynamic highlighting
-set incsearch
+  " When searching try to be smart about cases
+  set smartcase
 
-" For regular expressions turn magic on
-set magic
+  " Highlight search results
+  set hlsearch
 
-" Default global search flag
-set gdefault
+  " For regular expressions turn magic on
+  set magic
+" }}}
 
+" Miscellaneous {{{
+  " Don't redraw while executing macros (good performance config)
+  set lazyredraw
 
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
+  " Show matching brackets when text indicator is over them
+  set showmatch
 
-" Show matching brackets when text indicator is over them
-set showmatch
+  " Set to auto read when a file is changed from the outside
+  set autoread
+
+  " In many terminal emulators the mouse works just fine, thus enable it.
+  if has('mouse')
+    set mouse=a
+  endif
+" }}}
+
 
 " How many tenths of a second to blink when matching brackets
 set mat=2
@@ -230,22 +248,23 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Add a bit extra margin to the left
-set foldcolumn=1
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
+" => Colours and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting
-syntax enable
+" Theme {{{
+  set background=dark
 
-try
-    colorscheme desert
-catch
-endtry
+  " Enable syntax highlighting
+  if !exists("g:syntax_on")
+      syntax enable
+  endif
 
-set background=dark
+  try
+      colorscheme desert
+  endtry
+" }}}
+
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -262,21 +281,22 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
+" Undo/Backup/Swap {{{
+  if !isdirectory(expand("~/.vim/undo/"))
+    silent !mkdir -p ~/.vim/undo
+  endif
 
-" undotree
-if !isdirectory(expand("~/.vim/undo/"))
-  silent !mkdir -p ~/.vim/undo
-endif
+  " Turn backup off, since most stuff is in SVN, git et.c anyway...
+  " No backup files
+  set nobackup
+  " No backup files while editing
+  set nowritebackup
+  set noswapfile
 
-set undodir^=~/.vim/undo/                  " Directory to put undo files
-set undofile
+  " Undotree
+  set undodir^=~/.vim/undo/                  " Directory to put undo files
+  set undofile
+" }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -310,47 +330,72 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+" Mappings {{{
+  " With a map leader it's possible to do extra key combinations
+  let mapleader = ","
+  let g:mapleader = ","
 
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+  " tbh who actually uses q:
+  nnoremap q: :q
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+  " Treat long lines as break lines (useful when moving around in them)
+  nnoremap j gj
+  nnoremap k gk
+  nnoremap J gj
+  nnoremap K gk
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+  " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+  nnoremap <space> /
+  nnoremap <c-space> ?
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+  " Disable highlight when <leader><cr> is pressed
+  nnoremap <silent> <leader><cr> :noh<cr>
 
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
+  " Fast saving
+  nnoremap <leader>w :w!<cr>
 
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
+  " Smart way to move between windows
+  nnoremap <C-j> <C-W>j
+  nnoremap <C-k> <C-W>k
+  nnoremap <C-h> <C-W>h
+  nnoremap <C-l> <C-W>l
 
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
+  " Close the current buffer
+  nnoremap <leader>bd :Bclose<cr>:tabclose<cr>gT
 
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
+  " Close all the buffers
+  nnoremap <leader>ba :bufdo bd<cr>
 
+  map <leader>l :bnext<cr>
+  map <leader>h :bprevious<cr>
+
+  " Useful mappings for managing tabs
+  map <leader>tn :tabnew<cr>
+  map <leader>to :tabonly<cr>
+  map <leader>tc :tabclose<cr>
+  map <leader>tm :tabmove
+  map <leader>t<leader> :tabnext
+
+  " Let 'tl' toggle between this and the last accessed tab
+  let g:lasttab = 1
+  nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+  au TabLeave * let g:lasttab = tabpagenr()
+
+  " Spell-checking {{{
+    " Pressing ,ss will toggle and untoggle spell checking
+    map <leader>ss :setlocal spell!<cr>
+
+    " Shortcuts using <leader>
+    " next spelling error
+    map <leader>sn ]s
+    " previous spelling error
+    map <leader>sp [s
+    " add word to spelling dictionary
+    map <leader>sa zg
+    " view spelling correction suggestions
+    map <leader>s? z=
+  " }}}
+" }}}
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -368,8 +413,7 @@ endtry
 
 
 " Status line {{{
-  " Always show the status line
-  set laststatus=2
+  set laststatus=2                              " Always show the status line
 
   " Format the status line
   set statusline=\ %{HasPaste()}
@@ -386,6 +430,7 @@ endtry
 
   set statusline+=\ \ Column:\ %c               " Column number
 " }}}
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -415,52 +460,6 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ag searching and cope displaying
-"    requires ag.vim - it's much better than vimgrep/grep
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press gv you Ag after the selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
-
-" Open Ag and put the cursor in the right position
-map <leader>g :Ag
-
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with Ag, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-" next spelling error
-map <leader>sn ]s
-" previous spelling error
-map <leader>sp [s
-" add word to spelling dictionary
-map <leader>sa zg
-" view spelling correction suggestions
-map <leader>s? z=
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -587,10 +586,8 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 set nofoldenable    " disable folding
 
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Custom Configuration
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
+" Machine-specific local config {{{
+  if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+  endif
+" }}}
