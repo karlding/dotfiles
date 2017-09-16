@@ -14,8 +14,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'saltstack/salt-vim', { 'for': ['sls'] }
     Plug 'elixir-lang/vim-elixir', { 'for': ['elixir'] }
     Plug 'fatih/vim-go', { 'for': ['go'], 'tag': 'v1.14' , 'do': ':GoInstallBinaries' }
-    Plug 'cespare/vim-toml', { 'for': ['toml'] }
     Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'], 'tag': 'stable-20160928' }
+    Plug 'cespare/vim-toml', { 'for': ['toml'] }
   " }}}
 
   " UI/UX {{{
@@ -38,10 +38,8 @@ call plug#end()
 
 " Plugin Configuration {{{
   " Plugin: vim-gitgutter {{{
-    " disable realtime updates on "Stop typing" event
-    let g:gitgutter_realtime = 0
-    " disable eager updates
-    let g:gitgutter_eager = 0
+    let g:gitgutter_realtime = 0    " disable realtime updates on Stop typing event
+    let g:gitgutter_eager = 0       " disable eager updates
   " }}}
 
   " Plugin: vim-go {{{
@@ -57,7 +55,6 @@ call plug#end()
   " }}}
 
   " Plugin: neocomplete {{{
-    " Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0
 
@@ -135,27 +132,28 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 
-filetype plugin indent on    " required
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
+set textwidth=80
+set colorcolumn=+1
+
 
 " Spacing {{{
-  " Enable file-type plugins
-  filetype plugin on
-  filetype indent on
+  set smarttab                        " Be smart when using tabs ;)
+  set expandtab                       " Use spaces instead of spaces
+  filetype plugin indent on           " Load filetype-specific indentation
+
+  " 1 tab == 4 spaces
+  set shiftwidth=4
+  set tabstop=4
 " }}}
 
 
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
-
+" Commands {{{
+  " :W sudo saves the file
+  " (useful for handling the permission-denied error)
+  command W w !sudo tee % > /dev/null
+" }}}
 
 " Autocomplete {{{
   set wildmenu                                " Turn on the WiLd menu
@@ -189,7 +187,6 @@ set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-
 " Height of the command bar
 set cmdheight=2
 
@@ -203,39 +200,19 @@ set whichwrap+=<,>,h,l
 
 
 " Search {{{
-  " Ignore case when searching
-  set ignorecase
-
-  " Dynamic highlighting
-  set incsearch
-
-  " Default global search flag
-  set gdefault
-
-  " When searching try to be smart about cases
-  set smartcase
-
-  " Highlight search results
-  set hlsearch
-
-  " For regular expressions turn magic on
-  set magic
+  set gdefault      " Default global search flag
+  set ignorecase    " Ignore case when searching
+  set incsearch     " Dynamic highlighting
+  set smartcase     " When searching, try to be smart about cases
+  set hlsearch      " Highlight search results
+  set magic         " For regular expressions turn magic on
 " }}}
 
-" Miscellaneous {{{
-  " Don't redraw while executing macros (good performance config)
-  set lazyredraw
-
-  " Show matching brackets when text indicator is over them
-  set showmatch
-
-  " Set to auto read when a file is changed from the outside
-  set autoread
-
-  " In many terminal emulators the mouse works just fine, thus enable it.
-  if has('mouse')
-    set mouse=a
-  endif
+" Folding {{{
+  set foldenable            " Enable folds
+  set foldlevelstart=10     " Open most folds by default
+  set foldnestmax=7         " 8 nested fold max
+  set foldmethod=syntax     " Fold based on file syntax
 " }}}
 
 
@@ -286,31 +263,20 @@ set ffs=unix,dos,mac
     silent !mkdir -p ~/.vim/undo
   endif
 
-  " Turn backup off, since most stuff is in SVN, git et.c anyway...
-  " No backup files
-  set nobackup
-  " No backup files while editing
-  set nowritebackup
-  set noswapfile
+  set nobackup              " No backup files
+  set nowritebackup         " No backup files while editing
+  set noswapfile            " No swap file
 
-  " Undotree
-  set undodir^=~/.vim/undo/                  " Directory to put undo files
-  set undofile
+  " Undotree {{{
+    set undodir^=~/.vim/undo/                  " Directory to put undo files
+    set undofile
+  " }}}
 " }}}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
@@ -324,19 +290,22 @@ set wrap "Wrap lines
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
 
 " Mappings {{{
   " With a map leader it's possible to do extra key combinations
   let mapleader = ","
   let g:mapleader = ","
 
+  " Disable <F1> for :help
+  nnoremap <F1> <nop>
+
   " tbh who actually uses q:
   nnoremap q: :q
+
+  " Visual mode pressing * or # searches for the current selection
+  " Super useful! From an idea by Michael Naumann
+  vnoremap <silent> * :call VisualSelection('f', '')<CR>
+  vnoremap <silent> # :call VisualSelection('b', '')<CR>
 
   " Treat long lines as break lines (useful when moving around in them)
   nnoremap j gj
@@ -477,117 +446,120 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-" Remove startup message
-set shortmess+=I
 
 " Remap keys
-" <F1> for help; :help is generally more useful for the experienced user
-nnoremap <F1> <nop>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
+" Helper Functions {{{
+  function! CmdLine(str)
+      exe "menu Foo.Bar :" . a:str
+      emenu Foo.Bar
+      unmenu Foo
+  endfunction
 
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+  function! VisualSelection(direction, extra_filter) range
+      let l:saved_reg = @"
+      execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+      let l:pattern = escape(@", '\\/.*$^~[]')
+      let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("Ag \"" . l:pattern . "\" " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
+      if a:direction == 'b'
+          execute "normal ?" . l:pattern . "^M"
+      elseif a:direction == 'gv'
+          call CmdLine("Ag \"" . l:pattern . "\" " )
+      elseif a:direction == 'replace'
+          call CmdLine("%s" . '/'. l:pattern . '/')
+      elseif a:direction == 'f'
+          execute "normal /" . l:pattern . "^M"
+      endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
+      let @/ = l:pattern
+      let @" = l:saved_reg
+  endfunction
 
+  " Returns true if paste mode is enabled
+  function! HasPaste()
+      if &paste
+          return 'PASTE MODE  '
+      endif
+      return ''
+  endfunction
 
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
+  " Don't close window, when deleting a buffer
+  command! Bclose call <SID>BufcloseCloseIt()
+  function! <SID>BufcloseCloseIt()
+     let l:currentBufNum = bufnr("%")
+     let l:alternateBufNum = bufnr("#")
 
-" Don't close window, when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
+     if buflisted(l:alternateBufNum)
+       buffer #
+     else
+       bnext
+     endif
 
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
+     if bufnr("%") == l:currentBufNum
+       new
+     endif
 
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
+     if buflisted(l:currentBufNum)
+       execute("bdelete! ".l:currentBufNum)
+     endif
+  endfunction
+" }}}
 
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
-endfunction
+" Languages {{{
+  " Python {{{
+    let python_highlight_all = 1
+    au FileType python syn keyword pythonDecorator True None False self
 
-""""""""""""""""""""""""""""""
-" => Python section
-""""""""""""""""""""""""""""""
-let python_highlight_all = 1
-au FileType python syn keyword pythonDecorator True None False self
+    au BufNewFile,BufRead *.jinja set syntax=htmljinja
+    au BufNewFile,BufRead *.mako set ft=mako
 
-au BufNewFile,BufRead *.jinja set syntax=htmljinja
-au BufNewFile,BufRead *.mako set ft=mako
+    au FileType python map <buffer> F :set foldmethod=indent<cr>
 
-au FileType python map <buffer> F :set foldmethod=indent<cr>
+    au FileType python inoremap <buffer> $r return
+    au FileType python inoremap <buffer> $i import
+    au FileType python inoremap <buffer> $p print
+    au FileType python inoremap <buffer> $f #--- PH ----------------------------------------------<esc>FP2xi
+    au FileType python map <buffer> <leader>1 /class
+    au FileType python map <buffer> <leader>2 /def
+    au FileType python map <buffer> <leader>C ?class
+    au FileType python map <buffer> <leader>D ?def
+  " }}}
 
-au FileType python inoremap <buffer> $r return
-au FileType python inoremap <buffer> $i import
-au FileType python inoremap <buffer> $p print
-au FileType python inoremap <buffer> $f #--- PH ----------------------------------------------<esc>FP2xi
-au FileType python map <buffer> <leader>1 /class
-au FileType python map <buffer> <leader>2 /def
-au FileType python map <buffer> <leader>C ?class
-au FileType python map <buffer> <leader>D ?def
+  " JavaScript {{{
+    au FileType javascript setl fen
+    au FileType javascript setl nocindent
 
+    au FileType javascript imap <c-t> $log();<esc>hi
+    au FileType javascript imap <c-a> alert();<esc>hi
 
-""""""""""""""""""""""""""""""
-" => JavaScript section
-"""""""""""""""""""""""""""""""
-au FileType javascript setl fen
-au FileType javascript setl nocindent
+    au FileType javascript inoremap <buffer> $r return
+    au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
+  " }}}
 
-au FileType javascript imap <c-t> $log();<esc>hi
-au FileType javascript imap <c-a> alert();<esc>hi
+  " CoffeeScript {{{
+    au FileType gitcommit call setpos('.', [0, 1, 1, 0])
+  " }}}
+" }}}
 
-au FileType javascript inoremap <buffer> $r return
-au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
+" Miscellaneous {{{
+  set lazyredraw    " Don't redraw while executing macros
+  set showmatch     " Highlight matching brackets
+  set autoread      " Read when a file is changed from the outside
+  set shortmess+=I  " Remove startup message
 
-""""""""""""""""""""""""""""""
-" => CoffeeScript section
-"""""""""""""""""""""""""""""""
-au FileType gitcommit call setpos('.', [0, 1, 1, 0])
-
-set nofoldenable    " disable folding
-
+  " In many terminal emulators the mouse works just fine, thus enable it.
+  if has('mouse')
+    set mouse=a
+  endif
+" }}}
 
 " Machine-specific local config {{{
   if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
   endif
 " }}}
+
+" vim:foldmethod=marker:foldlevel=0
