@@ -55,7 +55,7 @@ brew 'subversion'
 # GNU command line tools
 
 # coreutils
-brew 'coreutils'
+brew 'coreutils', args: ['with-default-names']
 
 # binutils
 brew 'binutils'
