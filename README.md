@@ -54,23 +54,10 @@ mklink /H "%APPDATA%\ConEmu.xml" "%DOTFILES_DIR%\os\windows\ConEmu\ConEmu.xml"
 ```
 
 ### Sublime Text 3
-Symlink the entire ``User`` folder to the Sublime Text app directory, at ``%appdata%\Sublime Text 3\Packages\User``.
+Symlink the entire ``User`` folder to the Sublime Text directory.
 
 ```bash
 mklink /J "%appdata%\Sublime Text 3\Packages\User" "C:\dotfiles\location\subl\User"
-```
-
-### python and pyenv
-```bash
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-```
-
-Now start development!
-
-```bash
-pyenv virtualenv 2.7.8 vectorize278
-source ~/.pyenv/versions/vectorize278/bin/activate
 ```
 
 ### Atom
@@ -80,7 +67,28 @@ Symlink the ``atom`` directory to ``~/.atom`` (or create a hard junction ``%user
 mklink /J "%appdata%\.atom" "C:\dotfiles\location\atom"
 ```
 
-You can automatically install all the packages using ``apm``.
+### Vim
+
+Hard link your ``.vim`` from ``dotfiles`` to your home directory.
+
+```bash
+mklink /J C:\cygwin64\home\myusername\.vim C:\%DOTFILES_DIR%\vim\.vim
+```
+
+## Post Install
+
+### tmux
+
+Clone the tmux plugin manager
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+And then in ``tmux``, <kbd>Prefix</kbd>, <kbd>Ctrl</kbd> + <kbd>I</kbd>.
+
+### Atom
+You can automatically install all packages using ``apm``.
 
 ```bash
 cd ~/.atom
@@ -106,13 +114,7 @@ To backup
 code --list-extensions > extensions.txt
 ```
 
-### Vim
-
-Hard link your ``.vim`` from ``dotfiles`` to your home directory (for me, ``/home`` is ``C:\cygwin64\home\myusername``) using a junction.
-
-```bash
-mklink /J C:\cygwin64\home\myusername\.vim C:\%DOTFILES_DIR%\vim\.vim
-```
+### vim
 
 Voila! Now install all your plugins using ``:PlugInstall``.
 
@@ -172,3 +174,17 @@ And then add these utils to your ``PATH`` (probably in ``.bash_exports.local``)
 ```bash
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 ```
+
+### python and pyenv
+```bash
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+```
+
+Now start development!
+
+```bash
+pyenv virtualenv 2.7.8 vectorize278
+source ~/.pyenv/versions/vectorize278/bin/activate
+```
+
