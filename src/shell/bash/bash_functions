@@ -82,11 +82,11 @@ function elephant() {
   local gray='\033[1;30m'
   local white='\033[1;37m'
 
-  echo -e "   ${gray}____"
-  echo -e "  ${gray}/${white}.${gray}   \__"
-  echo -e " /_  \\_/  \\"
-  echo -e "// \\  ___ |\\"
-  echo -e "    |_| |_|"
+  echo -e "    ${gray}____"
+  echo -e "   ${gray}/${white}.${gray}   \__"
+  echo -e "  /_  \\_/  \\"
+  echo -e " // \\  ___ |\\"
+  echo -e "     |_| |_|"
 }
 
 [ -f ~/.bash_functions.local ] && source ~/.bash_functions.local
