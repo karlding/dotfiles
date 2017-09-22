@@ -33,3 +33,5 @@ shopt -s no_empty_cmd_completion
 # filename expansion
 shopt -s nocaseglob
 
+# Enable recursive wildcards (requires bash 4.0+)
+shopt -s globstar
