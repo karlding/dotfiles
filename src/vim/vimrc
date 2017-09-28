@@ -226,9 +226,6 @@ set t_vb=
 set tm=500
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colours and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme {{{
   set background=dark
 
@@ -287,10 +284,6 @@ set si "Smart indent
 set wrap "Wrap lines
 
 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-
 " Mappings {{{
   " With a map leader it's possible to do extra key combinations
   let mapleader = ","
@@ -335,8 +328,9 @@ set wrap "Wrap lines
   " Close all the buffers
   nnoremap <leader>ba :bufdo bd<cr>
 
-  map <leader>l :bnext<cr>
-  map <leader>h :bprevious<cr>
+  " Easier buffer navigation
+  nnoremap <Tab> :bnext<cr>
+  nnoremap <S-Tab> :bprevious<cr>
 
   " Useful mappings for managing tabs
   map <leader>tn :tabnew<cr>
@@ -401,25 +395,6 @@ endtry
 " }}}
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remap VIM 0 to first non-blank character
-map 0 ^
-
-" Move a line of text using ALT+[jk] or Command+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
-
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
   exe "normal mz"
@@ -437,17 +412,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
-
-" Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-
-" Remap keys
 
 
 " Helper Functions {{{
@@ -539,7 +507,7 @@ map <leader>pp :setlocal paste!<cr>
     au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
   " }}}
 
-  " CoffeeScript {{{
+  " gitcommit {{{
     au FileType gitcommit call setpos('.', [0, 1, 1, 0])
   " }}}
 " }}}
