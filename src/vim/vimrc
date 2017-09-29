@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
   " }}}
 
   " UI/UX {{{
+    Plug 'chriskempson/base16-vim'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' , 'tag': '5.0.0' }
     Plug 'airblade/vim-gitgutter'
     Plug 'christoomey/vim-tmux-navigator', { 'tag': 'v1.0' }
@@ -37,6 +38,10 @@ call plug#end()
 
 
 " Plugin Configuration {{{
+  " Plugin: vim-base16 {{{
+    let base16colorspace=256  " Access colors present in 256 colorspace
+  " }}}
+
   " Plugin: vim-gitgutter {{{
     let g:gitgutter_realtime = 0    " disable realtime updates on Stop typing event
     let g:gitgutter_eager = 0       " disable eager updates
@@ -148,7 +153,6 @@ set colorcolumn=+1
   set tabstop=4
 " }}}
 
-
 " Commands {{{
   " :W sudo saves the file
   " (useful for handling the permission-denied error)
@@ -235,7 +239,7 @@ set tm=500
   endif
 
   try
-      colorscheme desert
+      colorscheme base16-default-dark
   endtry
 " }}}
 

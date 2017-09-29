@@ -29,6 +29,10 @@ If you're on a Mac, you may want to do
 brew bundle
 ```
 
+### base16-shell
+
+You may want to install a [base16-shell theme](https://github.com/chriskempson/base16-shell). I use the ``base16_ocean`` theme.
+
 ### bash-completion
 You may also want to install bash-completion (which is a dependency that is used for the ``PS1`` prompt.
 
