@@ -32,17 +32,6 @@ function md() {
 
 # ----------------------------------------------------------------------
 
-# Get gzip information (gzipped file size + reduction size)
-# usage: gz filename
-function gz() {
-    echo "orig size    (bytes): "
-    cat "$1" | wc -c
-    echo "gzipped size (bytes): "
-    gzip -c "$1" | wc -c
-}
-
-# ----------------------------------------------------------------------
-
 # Create data URI from a file
 # usage: datauri filename
 function datauri() {
