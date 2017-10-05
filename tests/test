@@ -1,19 +1,30 @@
 #!/bin/bash
 
-cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && source "utils.sh"
+ROOT_DIR=$(pwd)
+# source test helpers
+cd "$(dirname "${BASH_SOURCE[0]}")" && source "utils.sh"
+# go back to original directory
+cd "${ROOT_DIR}"
 
-if [ `get_os` == "macos" ]; then
-    ../install macos
-elif [ `get_os` == "ubuntu" ]; then
-    ../install linux
-elif [ `get_os` == "windows" ]; then
+EXIT_CODE=0
+
+# main entry point
+if [ "$(get_os)" == "macos" ]; then
+    ./install macos || EXIT_CODE=1
+
+    # brew
+    brew update
+    brew bundle || EXIT_CODE=1
+elif [ "$(get_os)" == "ubuntu" ]; then
+    ./install linux || EXIT_CODE=1
+elif [ "$(get_os)" == "windows" ]; then
     echo "Windows has no tests"
 
-    exit 1
+    EXIT_CODE=1
 else
     echo "[ERROR]: Unknown OS"
-    echo `get_os`
+    get_os
 
-    exit 1
+    EXIT_CODE=1
 fi
+exit ${EXIT_CODE}
