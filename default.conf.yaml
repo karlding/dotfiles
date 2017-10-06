@@ -19,6 +19,7 @@
     ~/.curlrc: src/curl/curlrc
     ~/.dircolors: src/shell/dircolors
     ~/.editorconfig: src/editorconfig/editorconfig
+    ~/.gdbinit: src/gdb/gdbinit
     ~/.hgignore: src/hg/hgignore
     ~/.inputrc: src/shell/inputrc
     ~/.nano: src/nano/.nano
