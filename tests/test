@@ -12,6 +12,9 @@ EXIT_CODE=0
 if [ "$(get_os)" == "macos" ]; then
     ./install macos || EXIT_CODE=1
 
+    # rvm
+    rvm get stable
+
     # brew
     brew update
     brew bundle || EXIT_CODE=1
