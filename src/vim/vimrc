@@ -46,8 +46,8 @@ call plug#end()
   " }}}
 
   " Plugin: vim-gitgutter {{{
-    let g:gitgutter_realtime = 0    " disable realtime updates on Stop typing event
-    let g:gitgutter_eager = 0       " disable eager updates
+    let g:gitgutter_realtime = 0  " no realtime updates upon Stop typing event
+    let g:gitgutter_eager = 0     " disable eager updates
   " }}}
 
   " Plugin: vim-go {{{
@@ -136,6 +136,19 @@ call plug#end()
   " }}}
 " }}}
 
+" Theme {{{
+  set background=dark
+
+  " Enable syntax highlighting
+  if !exists("g:syntax_on")
+    syntax enable
+  endif
+
+  try
+    colorscheme base16-ocean
+  endtry
+" }}}
+
 " Enable omni completion
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -147,9 +160,10 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " Sets how many lines of history VIM has to remember
 set history=500
-set textwidth=80
-set colorcolumn=+1
 
+set textwidth=80
+" highlight column 81 and 121
+let &colorcolumn="80,".join(range(120,999),",")
 
 " Spacing {{{
   set smarttab                        " Be smart when using tabs ;)
@@ -237,19 +251,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
-" Theme {{{
-  set background=dark
-
-  " Enable syntax highlighting
-  if !exists("g:syntax_on")
-      syntax enable
-  endif
-
-  try
-      colorscheme base16-default-dark
-  endtry
-" }}}
 
 
 " Set extra options when running in GUI mode
@@ -393,22 +394,22 @@ endtry
 
 
 " Status line {{{
-  set laststatus=2                              " Always show the status line
+  set laststatus=2                        " Always show the status line
 
   " Format the status line
   set statusline=\ %{HasPaste()}
-  set statusline+=%F                            " Full path to the file in the buffer
-  set statusline+=%m                            " Modified flag
-  set statusline+=%r                            " Read-only flag
-  set statusline+=%h                            " Help buffer flag
+  set statusline+=%F                      " Full path to the file in the buffer
+  set statusline+=%m                      " Modified flag
+  set statusline+=%r                      " Read-only flag
+  set statusline+=%h                      " Help buffer flag
   set statusline+=\ %w
 
-  set statusline+=\ \ cwd:\ %{getcwd()}         " Current working directory
+  set statusline+=\ \ cwd:\ %{getcwd()}   " Current working directory
 
-  set statusline+=\ \ \ Line:\ %l               " Line number
-  set statusline+=\/%L                          " Number of lines in buffer
+  set statusline+=\ \ \ Line:\ %l         " Line number
+  set statusline+=\/%L                    " Number of lines in buffer
 
-  set statusline+=\ \ Column:\ %c               " Column number
+  set statusline+=\ \ Column:\ %c         " Column number
 " }}}
 
 
