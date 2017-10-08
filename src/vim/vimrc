@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'saltstack/salt-vim', { 'for': ['sls'] }
     Plug 'elixir-lang/vim-elixir', { 'for': ['elixir'] }
     Plug 'fatih/vim-go', { 'for': ['go'], 'tag': 'v1.14' , 'do': ':GoInstallBinaries' }
+    Plug 'elzr/vim-json', { 'for': ['json'] }
     Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'], 'tag': 'stable-20160928' }
     Plug 'cespare/vim-toml', { 'for': ['toml'] }
   " }}}
