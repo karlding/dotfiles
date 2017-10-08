@@ -16,8 +16,8 @@ if [ "$(get_os)" == "macos" ]; then
     rvm get stable
 
     # brew
-    brew update
-    brew bundle || EXIT_CODE=1
+    # brew update
+    # brew bundle || EXIT_CODE=1
 elif [ "$(get_os)" == "ubuntu" ]; then
     ./install linux || EXIT_CODE=1
 elif [ "$(get_os)" == "windows" ]; then
