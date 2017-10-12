@@ -134,11 +134,6 @@ You may want to set up a ``~/.gitconfig.local`` to prevent git from complaining 
     useConfigOnly = true
     name = Karl
     email = karlding@users.noreply.github.com
-
-[push]
-    # Prevent disasters when doing things like `git push -f`
-    # Requires git version >= 2
-    default = simple
 ```
 
 ## OSX Specifics
