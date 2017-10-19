@@ -373,10 +373,15 @@ set wrap "Wrap lines
     " view spelling correction suggestions
     map <leader>s? z=
   " }}}
+
   " Plugin: Undotree {{{
     nnoremap <Leader>u :UndotreeToggle<CR>
     " If undotree is opened, it is likely one wants to interact with it.
     let g:undotree_SetFocusWhenToggle=1
+  " }}}
+
+  " Plugin: NERDTree {{{
+    map <C-n> :NERDTreeToggle %<CR>
   " }}}
 " }}}
 
