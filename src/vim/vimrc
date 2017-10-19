@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
   " }}}
 
   " Miscellaneous {{{
+    Plug 'tpope/vim-fugitive'
     Plug 'shougo/neocomplete.vim'
     Plug 'shougo/neoinclude.vim'
     Plug 'scrooloose/nerdcommenter'
