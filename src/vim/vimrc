@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
 
   " UI/UX {{{
     Plug 'chriskempson/base16-vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' , 'tag': '5.0.0' }
     Plug 'airblade/vim-gitgutter'
     Plug 'christoomey/vim-tmux-navigator', { 'tag': 'v1.0' }
