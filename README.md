@@ -136,6 +136,10 @@ You may want to set up a ``~/.gitconfig.local`` to prevent git from complaining 
     email = karlding@users.noreply.github.com
 ```
 
+### fzf
+
+Install [fzf](https://github.com/junegunn/fzf.vim).
+
 ## OSX Specifics
 We probably want the GNU coreutils instead of the defaults that OSX ships.
 
