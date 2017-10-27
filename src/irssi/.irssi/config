@@ -263,3 +263,7 @@ settings = {
     awl_sort = "refnum";
   };
 };
+
+keyboard = (
+  { key = "meta-v"; id = "command"; data = "trackbar"; }
+);
