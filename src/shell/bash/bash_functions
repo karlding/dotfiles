@@ -24,14 +24,6 @@ function gz() {
 
 # ----------------------------------------------------------------------
 
-# Create a new directory and enter it after
-# usage: md directory
-function md() {
-    mkdir -p "$@" && cd "$@"
-}
-
-# ----------------------------------------------------------------------
-
 # Create data URI from a file
 # usage: datauri filename
 function datauri() {
