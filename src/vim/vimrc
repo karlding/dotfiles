@@ -323,10 +323,6 @@ set wrap  " Wrap lines
   nnoremap J gj
   nnoremap K gk
 
-  " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-  nnoremap <space> /
-  nnoremap <c-space> ?
-
   " Disable highlight when <leader><cr> is pressed
   nnoremap <silent> <leader><cr> :noh<cr>
 
@@ -348,6 +344,7 @@ set wrap  " Wrap lines
   " Easier buffer navigation
   nnoremap <Tab> :bnext<cr>
   nnoremap <S-Tab> :bprevious<cr>
+  map <leader>b :ls<CR>:b
 
   " Useful mappings for managing tabs
   map <leader>tn :tabnew<cr>
