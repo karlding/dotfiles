@@ -3,6 +3,10 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Prevent file overwrite on stdout redirection
+# # Use `>|` to force redirection to an existing file
+set -o noclobber
+
 # Automatically prepend `cd` to directory names
 shopt -s autocd
 
