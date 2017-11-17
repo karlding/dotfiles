@@ -23,8 +23,8 @@ set mark-symlinked-directories on
 "\e[A": history-search-backward
 
 # ctrl left, ctrl right for moving on the readline by word
-"\e[1;5C": forward-word
-"\e[1;5D": backward-word
+"\eOC": forward-word
+"\eOD": backward-word
 
 # Do not autocomplete hidden files unless pattern begins with a dot
 set match-hidden-files off
