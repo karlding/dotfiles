@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' , 'tag': '5.0.0' }
+    Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle', 'tag': 'v2.7' }
     Plug 'airblade/vim-gitgutter'
     Plug 'christoomey/vim-tmux-navigator', { 'tag': 'v1.0' }
   " }}}
@@ -146,6 +147,9 @@ call plug#end()
   " Plugin: NERDCommenter {{{
     " Add spaces after comment delimiters by default
     let g:NERDSpaceDelims = 1
+  " }}}
+  " Plugin: tagbar {{{
+    nmap <S-t> :TagbarToggle<CR>
   " }}}
 " }}}
 
