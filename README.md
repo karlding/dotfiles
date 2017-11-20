@@ -36,6 +36,10 @@ You may want to install a [base16-shell theme](https://github.com/chriskempson/b
 ### bash-completion
 You may also want to install bash-completion (which is a dependency that is used for the ``PS1`` prompt.
 
+### universal-ctags
+
+Either build [universal-ctags](https://github.com/universal-ctags/ctags) from source or pick one of the packages.
+
 #### Ubuntu
 ```bash
 sudo apt-get install bash-completion
