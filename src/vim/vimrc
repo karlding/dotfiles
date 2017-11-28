@@ -555,6 +555,11 @@ map <leader>pp :setlocal paste!<cr>
   if has('mouse')
     set mouse=a
   endif
+
+  " Case insensitve filename completion
+  if exists("&wildignorecase")
+    set wildignorecase
+  endif
 " }}}
 
 " Machine-specific local config {{{
