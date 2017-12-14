@@ -183,10 +183,9 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 ```
 
 ### python and pyenv
-```bash
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-```
+
+* [pyenv](https://github.com/pyenv/pyenv)
+* [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
 Now start development!
 
