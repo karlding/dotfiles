@@ -187,10 +187,3 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 * [pyenv](https://github.com/pyenv/pyenv)
 * [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
-Now start development!
-
-```bash
-pyenv virtualenv 2.7.8 vectorize278
-source ~/.pyenv/versions/vectorize278/bin/activate
-```
-
