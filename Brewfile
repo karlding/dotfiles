@@ -1,8 +1,33 @@
 # ----------------------------------------------------------------------
+# System related
+
+# automake
+brew 'automake'
+
+# openssl
+brew 'openssl'
+
+# libyaml
+# must be after openssl
+brew 'libyaml'
+
+
+# ----------------------------------------------------------------------
 # Terminals
 
 # tmux
 brew 'tmux'
+
+
+# ----------------------------------------------------------------------
+# Languages
+
+# Python 2.7
+#
+# Note: The order that this is installed in seems to matter, since vim
+# has a dependency on Python. Thus, we ensure that we have an upgraded
+# version of Python before proceeding to install vim.
+brew 'python'
 
 
 # ----------------------------------------------------------------------
@@ -26,16 +51,6 @@ brew 'vim', args: ['with-lua']
 
 # nano editor
 brew 'nano'
-
-
-# ----------------------------------------------------------------------
-# Downloaders
-
-# curl
-brew 'curl'
-
-# wget
-brew 'wget'
 
 
 # ----------------------------------------------------------------------
@@ -124,17 +139,14 @@ brew 'make'
 
 
 # ----------------------------------------------------------------------
-# System related
+# Downloaders
 
-# automake
-brew 'automake'
+# curl
+# Must be after openssl
+brew 'curl'
 
-# openssl
-brew 'openssl'
-
-# libyaml
-# must be after openssl
-brew 'libyaml'
+# wget
+brew 'wget'
 
 
 # ----------------------------------------------------------------------
