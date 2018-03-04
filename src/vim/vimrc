@@ -143,24 +143,8 @@ call plug#end()
   " }}}
 " }}}
 
-" Theme {{{
-  set background=dark
-
-  " Enable syntax highlighting
-  if !exists("g:syntax_on")
-    syntax enable
-  endif
-
-  try
-    colorscheme base16-ocean
-  endtry
-" }}}
-
-
-" Sets how many lines of history VIM has to remember
-set history=500
-
-set textwidth=80
+let $vim_root = "~/.vim"
+source $vim_root/core/general.vim
 " highlight column 81 and 121
 let &colorcolumn="80,".join(range(120,999),",")
 
@@ -223,8 +207,6 @@ endif
 " Height of the command bar
 set cmdheight=2
 
-" A buffer becomes hidden when it is abandoned
-set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
