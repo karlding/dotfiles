@@ -60,7 +60,7 @@ brew 'nano'
 brew 'git'
 
 # mercurial
-brew 'hg'
+brew 'mercurial'
 
 # subversion
 brew 'subversion'
