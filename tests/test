@@ -21,8 +21,9 @@ if [ "$(get_os)" == "macos" ]; then
     # brew
     # uninstall preinstalled packages on Travis
     # https://blog.travis-ci.com/2016-10-04-osx-73-default-image-live/
-    brew uninstall libyaml
-    brew uninstall openssl
+    brew remove --force $(brew list) --ignore-dependencies
+    brew cleanup
+
     brew update
     brew linkapps
     brew bundle || EXIT_CODE=1
