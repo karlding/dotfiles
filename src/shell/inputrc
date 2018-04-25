@@ -48,5 +48,9 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
+# Enable bracketed paste for security
+# (requires bash 4.4+)
+set enable-bracketed-paste on
+
 # source local override file if one exists
 $include ~/.inputrc.local
