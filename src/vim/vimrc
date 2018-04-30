@@ -424,6 +424,12 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+" Automatically update spell files when changes are detected
+for d in glob('~/.vim/spell/*.add', 2, 1)
+  if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+    exec 'mkspell! ' . fnameescape(d)
+  endif
+endfor
 
 
 " Helper Functions {{{
