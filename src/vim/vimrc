@@ -268,8 +268,10 @@ set ffs=unix,dos,mac
   set noswapfile            " No swap file
 
   " Undotree {{{
-    set undodir^=~/.vim/undo/                  " Directory to put undo files
-    set undofile
+    if has("persistent_undo")
+      set undodir^=~/.vim/undo/                  " Directory to put undo files
+      set undofile
+    endif
   " }}}
 " }}}
 
