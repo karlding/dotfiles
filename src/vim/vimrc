@@ -34,7 +34,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'shougo/neocomplete.vim'
     Plug 'shougo/neoinclude.vim'
-    Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.0' }
+    Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.1' }
     Plug 'vim-syntastic/syntastic', { 'on': 'SyntasticCheck', 'tag': '3.8.0' }
     Plug 'godlygeek/tabular', { 'tag': '1.0.0' }
     Plug 'mbbill/undotree', { 'on': 'UndotreeToggle', 'tag': 'rel_5.0' }
