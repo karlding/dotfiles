@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
     Plug 'saltstack/salt-vim', { 'for': ['sls'] }
     Plug 'elixir-lang/vim-elixir', { 'for': ['elixir'] }
-    Plug 'fatih/vim-go', { 'for': ['go'], 'tag': 'v1.14' , 'do': ':GoInstallBinaries' }
+    Plug 'fatih/vim-go', { 'for': ['go'], 'tag': 'v1.19' , 'do': ':GoInstallBinaries' }
     Plug 'elzr/vim-json', { 'for': ['json'] }
     Plug 'fatih/vim-nginx', { 'for': ['nginx'] }
     Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'], 'tag': 'stable-20160928' }
