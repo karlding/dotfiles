@@ -541,6 +541,9 @@ endfor
   if exists("&wildignorecase")
     set wildignorecase
   endif
+
+  " Disable modelines
+  set nomodeline
 " }}}
 
 " Machine-specific local config {{{
@@ -548,5 +551,3 @@ endfor
     source ~/.vimrc.local
   endif
 " }}}
-
-" vim:foldmethod=marker:foldlevel=0
