@@ -23,7 +23,7 @@
     ~/.gdbinit: src/gdb/gdbinit
     ~/.hgignore: src/hg/hgignore
     ~/.inputrc: src/shell/inputrc
-    ~/.irssi: src/irssi/.irssi
+    ~/.irssi: src/irssi
     ~/.nano: src/nano/.nano
     ~/.nanorc: src/nano/nanorc
     ~/.psqlrc: src/psql/psqlrc
