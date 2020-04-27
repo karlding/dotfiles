@@ -3,7 +3,6 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 source_bash_files() {
-
     local file=""
     local i=""
 
@@ -14,22 +13,18 @@ source_bash_files() {
         "bash_functions"
         "bash_options"
         "bash_prompt"
-        "bash.local"  # for local settings that should
-                      # not be under version control
+        "bash.local" # for local settings that should
+        # not be under version control
     )
 
     for i in ${!FILES_TO_SOURCE[*]}; do
-
         file="$HOME/.${FILES_TO_SOURCE[$i]}"
-
         [ -r "$file" ] && source "$file"
-
     done
 
     if [ -r "$HOME/.dircolors" ]; then
-        eval `dircolors $HOME/.dircolors`
-  	fi
-
+        eval $(dircolors $HOME/.dircolors)
+    fi
 }
 
 source_bash_files
