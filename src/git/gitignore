@@ -224,3 +224,13 @@ cscope.files
 csope.out
 cscope.in.out
 cscope.po.out
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# GPG and other keys
+# So we don't accidentally push secrets and keys
+secring.*
+*.der
+*.key
+*.pem
