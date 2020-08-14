@@ -5,7 +5,7 @@ filetype off                  " required
 " Define bundles via GitHub repositories
 call plug#begin('~/.vim/plugged')
   " General {{{
-    Plug 'sgur/vim-editorconfig', { 'tag': '0.8.0' }
+    Plug 'editorconfig/editorconfig-vim', { 'tag': 'v1.1.1' }
   " }}}
 
   " Syntax {{{
