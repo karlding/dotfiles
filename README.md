@@ -95,21 +95,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 And then in ``tmux``, <kbd>Prefix</kbd>, <kbd>Ctrl</kbd> + <kbd>I</kbd>.
 
-### Atom
-You can automatically install all packages using ``apm``.
-
-```bash
-cd ~/.atom
-apm install --packages-file package-list.txt
-```
-
-If you make any updates, update the ``package-list.txt`` file.
-
-```bash
-cd ~/.atom
-apm list --installed --bare > package-list.txt
-```
-
 ### vscode
 
 ```bash
