@@ -47,7 +47,7 @@ brew 'zsh'
 # Editors
 
 # vim editor
-brew 'vim', args: ['with-lua']
+brew 'vim'
 
 # nano editor
 brew 'nano'
@@ -70,7 +70,7 @@ brew 'subversion'
 # GNU command line tools
 
 # coreutils
-brew 'coreutils', args: ['with-default-names']
+brew 'coreutils'
 
 # binutils
 brew 'binutils'
@@ -79,7 +79,7 @@ brew 'binutils'
 brew 'diffutils'
 
 # ed
-brew 'ed', args: ['with-default-names']
+brew 'ed'
 
 # findutils
 brew 'findutils'
@@ -88,22 +88,22 @@ brew 'findutils'
 brew 'gawk'
 
 # gnu-indent
-brew 'gnu-indent', args: ['with-default-names']
+brew 'gnu-indent'
 
 # gnu-sed
-brew 'gnu-sed', args: ['with-default-names']
+brew 'gnu-sed'
 
 # gnu-tar
-brew 'gnu-tar', args: ['with-default-names']
+brew 'gnu-tar'
 
 # gnu-which
-brew 'gnu-which', args: ['with-default-names']
+brew 'gnu-which'
 
 # gnutls
 brew 'gnutls'
 
 # grep
-brew 'grep', args: ['with-default-names']
+brew 'grep'
 
 # gzip
 brew 'gzip'
@@ -115,7 +115,7 @@ brew 'screen'
 brew 'watch'
 
 # wdiff
-brew 'wdiff', args: ['with-gettext']
+brew 'wdiff'
 
 ###
 ## Some GNU command line tools already exist by default on macOS
