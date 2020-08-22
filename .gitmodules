@@ -1,3 +1,6 @@
 [submodule ".dotbot"]
 	path = .dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "src/gdb/gdb-dashboard"]
+	path = src/gdb/gdb-dashboard
+	url = https://github.com/cyrus-and/gdb-dashboard.git
