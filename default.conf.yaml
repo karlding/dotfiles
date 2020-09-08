@@ -6,6 +6,9 @@
 
 - clean: ['~', '~/.config']
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
 - link:
     ~/.dotfiles: ''
     ~/.ackrc: src/ack/ackrc
@@ -45,6 +48,5 @@
     ~/.minirc.dfl: src/minicom/minirc.dfl
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
   - chmod 0400 ~/.curlrc
   - chmod 0400 ~/.wgetrc

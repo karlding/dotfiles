@@ -1,0 +1,19 @@
+name: Test dotfiles setup
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run tests
+        run: |
+          ./tests/test
