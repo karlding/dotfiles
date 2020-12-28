@@ -76,8 +76,8 @@
     # instead of a/b/c/d as prefixes for diffs
     mnemonicprefix = true
 
-    # Use patience diff by default
-    algorithm = patience
+    # Use histogram diff by default
+    algorithm = histogram
 
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
