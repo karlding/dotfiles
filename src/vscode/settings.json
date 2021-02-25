@@ -6,5 +6,7 @@
     "editor.tabCompletion": true,
     "editor.wordWrap": "on",
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Base16 Dark Ocean"
+    "workbench.colorTheme": "Base16 Dark Ocean",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false
   }
