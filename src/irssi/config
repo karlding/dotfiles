@@ -31,15 +31,6 @@ servers = (
     tls_verify = "no";
     autoconnect = "yes";
   },
-  {
-    address = "irc.mozilla.org";
-    chatnet = "Mozilla";
-    port = "6697";
-    autoconnect = "yes";
-    use_ssl = "yes";
-    ssl_verify = "yes";
-    ssl_capath = "/etc/ssl/certs";
-  },
 
 );
 
