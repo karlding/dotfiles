@@ -102,6 +102,10 @@
     # https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855
     useConfigOnly = true
 
+[delta]
+    # Configuration for https://github.com/dandavison/delta
+    syntax-theme = base16
+
 [include]
     # Include local gitconfig for Git (1.7.10+)
     # https://git-scm.com/docs/git-config#_includes
