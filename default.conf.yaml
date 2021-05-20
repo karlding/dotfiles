@@ -38,8 +38,6 @@
     ~/.vim: src/vim/.vim
     ~/.vimrc: src/vim/vimrc
     ~/.wgetrc: src/wget/wgetrc
-    ~/.gitconfig: src/git/gitconfig
-    ~/.gitignore: src/git/gitignore
     ~/.hgrc: src/hg/hgrc
     ~/.ssh/config: src/ssh/config
     ~/.gemrc: src/ruby/gemrc

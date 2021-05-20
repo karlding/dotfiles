@@ -8,5 +8,7 @@
 
 - link:
     ~/.bash_autocomplete: src/shell/bash/autocomplete/macos/bash_autocomplete
+    ~/.gitconfig: src/git/gitconfig
+    ~/.gitignore: src/git/gitignore
     ~/Library/Application Support/Sublime Text 3/Packages/User: src/subl/User
     ~/Library/Application Support/Code/User/settings.json: src/vscode/settings.json

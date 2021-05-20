@@ -110,5 +110,6 @@
     # Include local gitconfig for Git (1.7.10+)
     # https://git-scm.com/docs/git-config#_includes
     path = ~/.gitconfig.local
+    path = ~/.config/git/config.local
 
 # vim:ft=gitconfig

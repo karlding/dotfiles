@@ -8,6 +8,8 @@
 
 - link:
     ~/.bash_autocomplete: src/shell/bash/autocomplete/ubuntu/bash_autocomplete
+    ~/.config/git/config: src/git/gitconfig
+    ~/.config/git/ignore: src/git/gitignore
     ~/.config/sublime-text-3/Packages/User: src/subl/User
     ~/.config/Code/User/settings.json: src/vscode/settings.json
     ~/.Xresources: src/x/Xresources
