@@ -7,6 +7,7 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.alacritty.yml: src/alacritty/alacritty.yml
     ~/.bash_autocomplete: src/shell/bash/autocomplete/macos/bash_autocomplete
     ~/.gitconfig: src/git/gitconfig
     ~/.gitignore: src/git/gitignore
