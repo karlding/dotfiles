@@ -42,7 +42,7 @@ call plug#begin('~/.vim/plugged')
   " }}}
 
   " Miscellaneous {{{
-    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive', { 'tag': 'v3.6' }
     Plug 'scrooloose/nerdcommenter', { 'tag': '2.5.1' }
     Plug 'dense-analysis/ale', { 'tag': 'v3.1.0' }
     Plug 'godlygeek/tabular', { 'tag': '1.0.0' }
