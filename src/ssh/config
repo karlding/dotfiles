@@ -7,5 +7,9 @@ Host *
   ServerAliveCountMax 10
   ServerAliveInterval 20
 
+  # Security-related default settings
+  # Disable by default in case we connect to untrusted hosts
+  ForwardAgent no
+
 # Include local ssh config
 Include ~/.ssh/config.local
