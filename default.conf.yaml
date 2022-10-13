@@ -19,6 +19,7 @@
     ~/.bash_profile: src/shell/bash/bash_profile
     ~/.bash_prompt: src/shell/bash/bash_prompt
     ~/.bashrc: src/shell/bash/bashrc
+    ~/.config/nvim: src/nvim
     ~/.ctags.d/.ctags: src/ctags/ctags
     ~/.curlrc: src/curl/curlrc
     ~/.dircolors: src/shell/dircolors
