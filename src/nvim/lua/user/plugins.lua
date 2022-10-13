@@ -1,6 +1,8 @@
 return require("packer").startup(function(use)
     use({"wbthomason/packer.nvim"})
 
+    use({"gpanders/editorconfig.nvim"})
+
     -- git
     use({"lewis6991/gitsigns.nvim"})
     use({"tpope/vim-fugitive", tag = "v3.7"})
