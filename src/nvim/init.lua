@@ -10,3 +10,4 @@ require "user.lsp"
 -- Plugin specific configuration
 require "user.gitsigns"
 require "user.telescope"
+require "user.treesitter"
